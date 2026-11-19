@@ -897,7 +897,7 @@ textarea.area-input{
           </div>
         </div>
         <div class="field">
-          <div class="field-label">음성 안내<small>한국어 음성으로 알려줘요 (ko-KR)</small></div>
+          <div class="field-label">음성 안내<small>7살 여자친구 목소리로 알려줘요</small></div>
           <button class="switch on" id="voiceSwitch" role="switch" aria-checked="true" aria-label="음성 안내"></button>
         </div>
         <div class="btn-row" style="margin-top:10px">
@@ -1474,23 +1474,127 @@ textarea.area-input{
       if (audioReady) return;
       audioReady = true;
       updateSoundUI();
+      preloadVoices();
+      primeSpeech();
       if ($('.alarm-banner')) { bellToll(0); bellToll(.7); }
       if (!silent) { sfxPop(); toast('소리와 알람을 켰어요! 🔔'); }
     }).catch(() => {});
   }
+
+  /* ---------------- 목소리: 7살 여자친구 · 발랄 톤 --------------
+     핵심 멘트는 미리 만든 음성 파일(assets/voice)로 들려주고,
+     이름처럼 그때그때 달라지는 말만 speechSynthesis를 밝고 높은 톤으로 써요. */
+  const VOICE_DIR = 'assets/voice/';
+  const VOICE_TEXT = {
+    brush: '진우야, 양치하자!',
+    kinder: '진우야, 유치원 가자!',
+    tomorrow: '내일 만나!',
+    praise1: '우와, 잘했어!',
+    praise2: '진짜 멋져!',
+    praise3: '최고야!',
+    voiceon: '음성 안내를 켰어요'
+  };
+  const VOICE_CORE = ['brush', 'kinder', 'tomorrow', 'praise1', 'praise2', 'praise3', 'voiceon'];
+  const voiceBuf = {}, voiceFailed = {}, voiceLoading = {}, voiceWarmed = {};
+  let voiceSrc = null;
+
+  function voiceFile(key) {
+    if (key.slice(0, 3) === 'sp:') return 'sp/' + key.slice(3) + '.mp3';
+    return VOICE_TEXT[key] ? key + '.mp3' : null;
+  }
+  function loadVoice(key) {
+    if (!key) return Promise.resolve(null);
+    if (voiceBuf[key]) return Promise.resolve(voiceBuf[key]);
+    if (voiceFailed[key]) return Promise.resolve(null);
+    if (voiceLoading[key]) return voiceLoading[key];
+    const c = ac(), file = voiceFile(key);
+    if (!c || !file) return Promise.resolve(null);
+    voiceLoading[key] = fetch(VOICE_DIR + file)
+      .then(r => { if (!r.ok) throw new Error('voice ' + r.status); return r.arrayBuffer(); })
+      .then(buf => new Promise((res, rej) => {
+        const p = c.decodeAudioData(buf, res, rej);
+        if (p && p.then) p.then(res, rej);
+      }))
+      .then(audio => { voiceBuf[key] = audio; return audio; })
+      .catch(() => {
+        /* 소리 켜기 전(suspended)에는 일시적인 실패일 수 있어 실패로 굳히지 않아요 */
+        if (audioReady) voiceFailed[key] = true;
+        return null;
+      });
+    const req = voiceLoading[key];
+    req.then(() => { if (voiceLoading[key] === req) delete voiceLoading[key]; });
+    return req;
+  }
+  function preloadVoices() { VOICE_CORE.forEach(k => loadVoice(k)); }
+  function warmVoice(key) {
+    if (!key || voiceWarmed[key] || voiceBuf[key] || voiceFailed[key]) return;
+    voiceWarmed[key] = true;
+    setTimeout(() => loadVoice(key), 60);
+  }
+  function stopVoice() {
+    if (voiceSrc) { try { voiceSrc.stop(); } catch (e) {} voiceSrc = null; }
+  }
+  function playVoiceBuffer(buf) {
+    const c = ac();
+    if (!c || !audioReady || !buf) return false;
+    try {
+      stopVoice();
+      const s = c.createBufferSource(), g = c.createGain();
+      s.buffer = buf; s.connect(g); g.connect(c.destination);
+      s.onended = () => { if (voiceSrc === s) voiceSrc = null; };
+      s.start();
+      voiceSrc = s;
+      return true;
+    } catch (e) { return false; }
+  }
+  function say(key, fallback) {
+    if (!S.settings.voice || !S.settings.sound) return;
+    const text = fallback || VOICE_TEXT[key] || '';
+    if (playVoiceBuffer(voiceBuf[key])) return;
+    loadVoice(key).then(buf => {
+      if (!S.settings.voice || !S.settings.sound) return;
+      if (playVoiceBuffer(buf)) return;
+      speak(text);
+    });
+  }
+  function saySpecies(sp) { if (sp) say('sp:' + sp.id, sp.name); }
+
+  /* 이름 같은 동적 멘트용: 한국어 여성/아이 목소리 중 가장 밝은 것을 골라 높은 톤으로 */
+  const KO_VOICE_PREF = /(yuna|sora|seoyeon|jimin|kyuri|sunhi|suhyeon|hyeri|female|woman|girl|child|kid|여성|아이|어린)/i;
+  let koVoice = null;
+  function pickKoVoice() {
+    let vs = [];
+    try { vs = window.speechSynthesis.getVoices() || []; } catch (e) { return null; }
+    if (koVoice && vs.indexOf(koVoice) > -1) return koVoice;
+    const ko = vs.filter(v => /^ko(-|_)?/i.test(v.lang || '') || /korean/i.test((v.lang || '') + ' ' + (v.name || '')));
+    if (!ko.length) return null;
+    koVoice = ko.filter(v => KO_VOICE_PREF.test(v.name || ''))[0] || ko[0];
+    return koVoice;
+  }
   function speak(text) {
-    if (!S.settings.voice) return;
+    if (!text) return;
+    if (!S.settings.voice || !S.settings.sound) return;
     if (!('speechSynthesis' in window)) return;
     try {
+      stopVoice();
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'ko-KR'; u.rate = .95; u.pitch = 1.08; u.volume = 1;
-      const v = window.speechSynthesis.getVoices().filter(x => /ko/i.test(x.lang) || /Korean/i.test(x.name))[0];
+      u.lang = 'ko-KR'; u.rate = 1.12; u.pitch = 1.45; u.volume = 1;
+      const v = pickKoVoice();
       if (v) u.voice = v;
       window.speechSynthesis.speak(u);
     } catch (e) {}
   }
-  if ('speechSynthesis' in window) { try { window.speechSynthesis.onvoiceschanged = function () {}; } catch (e) {} }
+  /* iOS는 첫 터치 전에는 말을 못 하므로, 그 터치에서 조용히 한 번 길을 열어 둬요 */
+  function primeSpeech() {
+    if (!('speechSynthesis' in window)) return;
+    try {
+      const u = new SpeechSynthesisUtterance(' ');
+      u.lang = 'ko-KR'; u.volume = 0; u.rate = 1; u.pitch = 1;
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+  if ('speechSynthesis' in window) { try { window.speechSynthesis.onvoiceschanged = function () { koVoice = null; }; } catch (e) {} }
 
   /* ---------------- 알람 ---------------- */
   function alarmEntries() {
@@ -1512,6 +1616,12 @@ textarea.area-input{
     });
   }
   let bannerTimer = null;
+  const ALARM_VOICE = { a1: 'brush', a2: 'kinder' };
+  function sayAlarm(a) {
+    const key = ALARM_VOICE[a.k];
+    if (key && String(a.text || '').trim() === VOICE_TEXT[key]) say(key);
+    else speak(a.text);
+  }
   function ringAlarm(a, isTest) {
     unlockAudio(true);
     const layer = $('#alarmLayer');
@@ -1544,7 +1654,7 @@ textarea.area-input{
       bellToll(0);
     }, 1500);
     bannerTimer = setTimeout(close, 45000);
-    setTimeout(() => speak(a.text), 650);
+    setTimeout(() => sayAlarm(a), 650);
     if (navigator.userActivation && navigator.userActivation.hasBeenActive && 'vibrate' in navigator) {
       try { navigator.vibrate([180, 90, 180, 90, 260]); } catch (e) {}
     }
@@ -1912,6 +2022,7 @@ textarea.area-input{
     if (rec.done[i]) {
       const count = rec.done.filter(Boolean).length;
       sfxPop();
+      if (count >= 2 && count <= 4) setTimeout(() => say(['praise1', 'praise2', 'praise3'][count - 2]), 180);
       if (count >= 2 && count <= 4) setTimeout(sfxCrack, 160);
       if (count === 5) {
         setTimeout(() => tryHatch(), 320);
@@ -1954,7 +2065,7 @@ textarea.area-input{
     showHatchModal(sp, false);
     sfxFanfare();
     confetti(130);
-    setTimeout(() => speak('진우야, 유치원 가자!'), 900);
+    setTimeout(() => say('kinder'), 900);
     refresh();
     setTimeout(() => { busy = false; }, 800);
   }
@@ -1963,7 +2074,7 @@ textarea.area-input{
     save();
     showFailModal(d);
     sfxWave();
-    setTimeout(() => speak('내일 만나!'), 700);
+    setTimeout(() => say('tomorrow'), 700);
     refresh();
   }
   function showHatchModal(sp, preview) {
@@ -2056,7 +2167,7 @@ textarea.area-input{
         const sp = byId[card.dataset.sp];
         const has = !!owned[sp.id];
         toast(has ? sp.name + ' · ' + sp.size + ' · ' + sp.desc : sp.name + ' — 아직 만나지 못했어요');
-        if (has) { sfxTinyPop(); speak(sp.name); }
+        if (has) { sfxTinyPop(); saySpecies(sp); }
       });
     });
   }
@@ -2181,9 +2292,10 @@ textarea.area-input{
         $$('.creature.show').forEach(c => { if (c !== el) c.classList.remove('show'); });
         el.classList.toggle('show');
         sfxTinyPop();
-        speak(sp.name);
+        saySpecies(sp);
       });
       scene.appendChild(el);
+      warmVoice('sp:' + sp.id);
     });
   }
   $('#monthStrip').addEventListener('click', e => {
@@ -2260,7 +2372,7 @@ textarea.area-input{
   $('#soundBtn').addEventListener('click', () => {
     if (!audioReady) { unlockAudio(false); return; }
     S.settings.sound = !S.settings.sound; save(); updateSoundUI();
-    if (!S.settings.sound) { try { window.speechSynthesis.cancel(); } catch (e) {} toast('소리를 잠시 껐어요'); }
+    if (!S.settings.sound) { stopVoice(); try { window.speechSynthesis.cancel(); } catch (e) {} toast('소리를 잠시 껐어요'); }
     else { sfxPop(); toast('소리를 켰어요'); }
   });
   $('#unlockBtn').addEventListener('click', () => unlockAudio(false));
@@ -2282,7 +2394,7 @@ textarea.area-input{
   $('#targetTime').addEventListener('change', e => { S.settings.target = e.target.value || '08:45'; save(); syncSettingsUI(); refresh(); toast('부화 마감을 ' + S.settings.target + '로 바꿨어요'); });
   $('#alarm1Switch').addEventListener('click', () => { S.settings.alarms.a1.on = !S.settings.alarms.a1.on; save(); syncSettingsUI(); });
   $('#alarm2Switch').addEventListener('click', () => { S.settings.alarms.a2.on = !S.settings.alarms.a2.on; save(); syncSettingsUI(); });
-  $('#voiceSwitch').addEventListener('click', () => { S.settings.voice = !S.settings.voice; save(); syncSettingsUI(); if (S.settings.voice) speak('음성 안내를 켰어요'); });
+  $('#voiceSwitch').addEventListener('click', () => { S.settings.voice = !S.settings.voice; save(); syncSettingsUI(); if (S.settings.voice) say('voiceon'); else { stopVoice(); try { window.speechSynthesis.cancel(); } catch (e) {} } });
   $('#resetToday').addEventListener('click', () => {
     const d = now(), k = ymd(d), ym = ymOf(d);
     S.days[k] = { done: [false, false, false, false, false], hatched: false, sp: null, failed: false, late: false };
@@ -2298,9 +2410,9 @@ textarea.area-input{
   $('#previewSuccess').addEventListener('click', () => {
     const sp = pickSpecies(ymOf(now())) || SPECIES[0];
     showHatchModal(sp, true); sfxFanfare(); confetti(110);
-    setTimeout(() => speak('진우야, 유치원 가자!'), 800);
+    setTimeout(() => say('kinder'), 800);
   });
-  $('#previewFail').addEventListener('click', () => { showFailModal(now()); sfxWave(); setTimeout(() => speak('내일 만나!'), 600); });
+  $('#previewFail').addEventListener('click', () => { showFailModal(now()); sfxWave(); setTimeout(() => say('tomorrow'), 600); });
   $('#hatchDexBtn').addEventListener('click', () => { closeModal('hatchModal'); switchView('dex'); });
   $('#failRetryBtn').addEventListener('click', () => { closeModal('failModal'); toast('내일 아침에 다시 만나요!'); });
 
@@ -2346,6 +2458,7 @@ textarea.area-input{
   });
 
   /* ---------------- 시작 ---------------- */
+  preloadVoices();
   document.addEventListener('pointerdown', function once() {
     unlockAudio(true);
     document.removeEventListener('pointerdown', once);
@@ -2357,7 +2470,9 @@ textarea.area-input{
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { refresh(); tick(); } });
 
   /* 검증용 최소 핸들 */
-  window.__dino = { state: S, refresh: refresh, switchView: switchView, openEgg: openEgg, dayRec: dayRec, targetDate: targetDate };
+  window.__dino = { state: S, refresh: refresh, switchView: switchView, openEgg: openEgg, dayRec: dayRec, targetDate: targetDate,
+    say: say, loadVoice: loadVoice, ringAlarm: ringAlarm, speak: speak,
+    voiceState: function () { return { ready: audioReady, loaded: Object.keys(voiceBuf), failed: Object.keys(voiceFailed) }; } };
 })();
 
 </script>
