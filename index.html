@@ -178,7 +178,7 @@ main{ position:relative; flex:1 1 auto; min-height:0; }
 .mcard .shot .fallback svg{ width:80%; height:80%; }
 .mcard .shade{
   position:absolute; inset:0; opacity:0; transition:opacity .45s ease;
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.32));
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.24));
 }
 .mcard .stamp{
   position:absolute; inset:0; display:grid; place-items:center; opacity:0; transform:scale(.55) rotate(-12deg);
@@ -218,7 +218,7 @@ main{ position:relative; flex:1 1 auto; min-height:0; }
 }
 /* 완료 */
 .mcard.done{ border-color:#c8f4e3; }
-.mcard.done .shot img{ filter:grayscale(.62) blur(.8px) brightness(1.02) contrast(.97); opacity:.72; transform:scale(1.02); }
+.mcard.done .shot img{ filter:grayscale(.55) blur(.6px) brightness(.99) contrast(.98); opacity:.78; transform:scale(1.02); }
 .mcard.done .shade{ opacity:1; }
 .mcard.done .stamp{ opacity:1; transform:scale(1) rotate(-6deg); }
 .mcard.done .label{ background:linear-gradient(180deg,#f2fdf8,#e9fbf3); }
@@ -524,7 +524,7 @@ textarea.area-input{
 .park-scene .hills{ position:absolute; left:0; top:24%; width:100%; height:32%; z-index:2; }
 .park-scene .ground-svg{ position:absolute; left:0; bottom:0; width:100%; height:66%; z-index:3; }
 .park-scene .pond{
-  position:absolute; left:3%; bottom:5%; width:37%; height:29%; z-index:4;
+  position:absolute; left:2.5%; bottom:4%; width:40%; height:31%; z-index:4;
   border-radius:50%;
   background:radial-gradient(ellipse at 46% 26%, #d4f2ff 0%, #9ddcfa 38%, #6ec3ec 68%, #4faddd 100%);
   box-shadow:inset 0 6px 16px rgba(255,255,255,.6), inset 0 -10px 22px rgba(20,90,130,.22), 0 6px 16px rgba(30,90,130,.12);
@@ -2140,19 +2140,19 @@ textarea.area-input{
         const size = 50 + (seed * 22);
         el.className = 'creature flyer';
         style += 'left:' + (8 + ((flyN - 1) % 3) * 26 + seed * 6) + '%;';
-        style += 'bottom:' + (54 + ((flyN - 1) % 5) * 5 + seed * 4) + '%;';
+        style += 'bottom:' + (48 + ((flyN - 1) % 4) * 7 + seed * 4) + '%;';
         style += 'width:' + size + 'px;height:' + size + 'px;z-index:5;';
         style += 'animation-duration:' + (26 + seed * 20).toFixed(0) + 's;animation-delay:-' + (seed * 26).toFixed(1) + 's;';
         if (flyN % 2 === 0) style += 'animation-direction:reverse;';
         el.innerHTML = '<div class="bob" style="width:100%;height:100%"><div class="flip" style="' + (flyN % 2 === 0 ? 'transform:scaleX(-1)' : '') + '">' + D.svgFor(sp.id) + '</div></div>';
       } else if (grp === 'aqua') {
         seaN++;
-        const size = 50 + seed * 16;
+        const size = 44 + seed * 14;
         /* 연못 타원 안쪽에만 배치 */
-        const ang = (200 + seaN * 52) * Math.PI / 180;
+        const ang = (206 + seaN * 49) * Math.PI / 180;
         const rr = .38 + (seaN % 2) * .2;
-        const cx = 21.5 + Math.cos(ang) * 15.5 * rr;
-        const cy = 19 + Math.sin(ang) * 10.5 * rr;
+        const cx = 22.5 + Math.cos(ang) * 16.5 * rr;
+        const cy = 19.5 + Math.sin(ang) * 11.5 * rr;
         el.className = 'creature swimmer';
         style += 'left:' + cx.toFixed(1) + '%;bottom:' + cy.toFixed(1) + '%;';
         style += 'width:' + size + 'px;height:' + (size * .82) + 'px;z-index:5;';
@@ -2160,17 +2160,19 @@ textarea.area-input{
         el.innerHTML = '<div class="waves" style="width:100%;height:100%"><div class="flip" style="' + (seaN % 2 ? 'transform:scaleX(-1)' : '') + '">' + D.svgFor(sp.id) + '</div></div>';
       } else {
         const slot = landN++;
-        const back = slot % 3 === 2;
-        const big = ['brachio', 'diplo', 'trex', 'spino', 'theri'].indexOf(sp.id) > -1;
-        const size = (big ? 104 : 82) * (back ? .78 : 1) + seed * 10;
-        const cols = Math.max(1, Math.min(7, landTotal));
+        const cols = 4;
         const col = slot % cols;
-        const left = 5 + col * (88 / cols) + seed * 4;
+        const row = Math.floor(slot / cols) % 3;          /* 0=앞, 1=가운데, 2=뒤 */
+        const big = ['brachio', 'diplo', 'trex', 'spino', 'theri'].indexOf(sp.id) > -1;
+        const base = big ? 100 : 80;
+        const size = base * (row === 2 ? .74 : row === 1 ? .87 : 1) + seed * 8;
+        const left = 33 + col * 13.5 + (row % 2 ? 5 : 0) + seed * 3;
+        const bottom = 9 + row * 9 + seed * 3;
         el.className = 'creature walker';
-        style += 'left:' + Math.min(left, 82).toFixed(1) + '%;';
-        style += 'bottom:' + (back ? 33 + seed * 4 : 10 + (slot % 3) * 7 + seed * 3).toFixed(1) + '%;';
-        style += 'width:' + size.toFixed(0) + 'px;height:' + (size * .84).toFixed(0) + 'px;z-index:' + (back ? 5 : 7) + ';';
-        style += '--dx:' + (14 + seed * 38).toFixed(0) + 'px;animation-duration:' + (6 + seed * 6).toFixed(1) + 's;animation-delay:-' + (seed * 5).toFixed(1) + 's;';
+        style += 'left:' + Math.min(left, 84).toFixed(1) + '%;';
+        style += 'bottom:' + bottom.toFixed(1) + '%;';
+        style += 'width:' + size.toFixed(0) + 'px;height:' + (size * .84).toFixed(0) + 'px;z-index:' + (10 - row * 2) + ';';
+        style += '--dx:' + (12 + seed * 34).toFixed(0) + 'px;animation-duration:' + (6 + seed * 6).toFixed(1) + 's;animation-delay:-' + (seed * 5).toFixed(1) + 's;';
         el.innerHTML = '<div class="steps" style="width:100%;height:100%"><div class="flip" style="' + (seed > .5 ? 'transform:scaleX(-1)' : '') + '">' + D.svgFor(sp.id) + '</div></div>';
       }
       el.style.cssText += style;
@@ -2282,9 +2284,16 @@ textarea.area-input{
   $('#alarm2Switch').addEventListener('click', () => { S.settings.alarms.a2.on = !S.settings.alarms.a2.on; save(); syncSettingsUI(); });
   $('#voiceSwitch').addEventListener('click', () => { S.settings.voice = !S.settings.voice; save(); syncSettingsUI(); if (S.settings.voice) speak('음성 안내를 켰어요'); });
   $('#resetToday').addEventListener('click', () => {
-    const k = ymd(now());
+    const d = now(), k = ymd(d), ym = ymOf(d);
     S.days[k] = { done: [false, false, false, false, false], hatched: false, sp: null, failed: false, late: false };
-    save(); refresh(); toast('오늘 체크를 초기화했어요');
+    /* 오늘 부화로 동산에 들어간 공룡도 함께 되돌려요 */
+    if (S.months[ym] && Array.isArray(S.months[ym].list)) {
+      S.months[ym].list = S.months[ym].list.filter(it => it.d !== k);
+    }
+    const f = S.fired[k];
+    if (f) { S.fired[k] = []; }
+    save(); refresh(); if ($('#view-park').classList.contains('active')) renderPark();
+    toast('오늘 체크를 초기화했어요');
   });
   $('#previewSuccess').addEventListener('click', () => {
     const sp = pickSpecies(ymOf(now())) || SPECIES[0];
