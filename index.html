@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<title>진우의 공룡 등원 대시보드</title>
+<meta name="description" content="진우의 아침 등원 준비와 공룡 알 부화를 함께하는 대시보드">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="진우의 공룡등원">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#f7fbff">
+<meta name="color-scheme" content="light">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23e7fbf3'/%3E%3Cellipse cx='50' cy='56' rx='26' ry='32' fill='%23fff8e6' stroke='%23e8c88f' stroke-width='3'/%3E%3Ccircle cx='41' cy='48' r='6' fill='%2333d29c'/%3E%3Ccircle cx='60' cy='64' r='4' fill='%23ffb43a'/%3E%3Ccircle cx='44' cy='70' r='3' fill='%23ff7d6b'/%3E%3C/svg%3E">
+<style>
+/* ============ 기본 ============ */
+*,*::before,*::after{ box-sizing:border-box; }
+:root{
+  --ink:#23304a; --ink2:#44557a; --muted:#7d8aa6;
+  --line:#e6edf7; --line2:#dbe6f4; --card:#ffffff;
+  --mint:#33d29c; --mint2:#14a97c; --mint-soft:#e7fbf3; --mint-ink:#0f8f68;
+  --amber:#ffb43a; --amber-soft:#fff5e0; --amber-ink:#a86a00;
+  --coral:#ff7d6b; --coral-soft:#ffece8;
+  --sky:#5ab6ff; --sky-soft:#e9f5ff;
+  --grape:#8f7bf5; --grape-soft:#f1eeff;
+  --gold:#f7c948; --gold-deep:#c98a00; --gold-soft:#fff6da;
+  --shadow-lg:0 18px 40px rgba(35,48,74,.10), 0 3px 10px rgba(35,48,74,.05);
+  --shadow-sm:0 8px 20px rgba(35,48,74,.08);
+  --r-xl:32px; --r-lg:26px; --r-md:20px; --r-sm:14px;
+  --tap:44px;
+}
+html{ height:100%; }
+body{
+  margin:0; min-height:100%;
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Noto Sans CJK KR",system-ui,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 680px at 4% -12%, #ffeacb 0%, rgba(255,234,203,0) 58%),
+    radial-gradient(1000px 720px at 102% -6%, #d6f1ff 0%, rgba(214,241,255,0) 55%),
+    radial-gradient(900px 620px at 52% 116%, #ddfaea 0%, rgba(221,250,234,0) 62%),
+    #f7fbff;
+  background-attachment:fixed;
+  -webkit-text-size-adjust:100%;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout:none;
+  user-select:none; -webkit-user-select:none;
+  overscroll-behavior-y:contain;
+}
+button, input, textarea{ font:inherit; color:inherit; }
+button{ -webkit-appearance:none; appearance:none; border:0; background:none; cursor:pointer; touch-action:manipulation; }
+h1,h2,h3,p{ margin:0; }
+svg{ display:block; }
+.hidden{ display:none !important; }
+:focus-visible{ outline:3px solid #7cc7ff; outline-offset:3px; }
+
+/* ============ 앱 뼈대 ============ */
+.app{
+  min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:column;
+  padding: calc(10px + env(safe-area-inset-top)) clamp(10px, 2vw, 28px) calc(16px + env(safe-area-inset-bottom));
+  gap:12px;
+}
+
+/* 상단 바 */
+.topbar{
+  position:sticky; top:calc(6px + env(safe-area-inset-top)); z-index:30;
+  display:flex; align-items:center; flex-wrap:wrap; gap:10px 14px;
+  padding:8px 10px 8px 12px;
+  border-radius:24px;
+  background:rgba(255,255,255,.78);
+  -webkit-backdrop-filter:saturate(160%) blur(16px);
+  backdrop-filter:saturate(160%) blur(16px);
+  box-shadow:0 10px 28px rgba(35,48,74,.08);
+  border:1px solid rgba(255,255,255,.9);
+}
+.brand{
+  display:flex; align-items:center; gap:10px; padding:4px 6px 4px 2px;
+  border-radius:18px; text-align:left; flex:0 1 auto; min-width:0;
+}
+.brand-mark{
+  width:42px; height:42px; flex:0 0 42px; border-radius:14px;
+  display:grid; place-items:center;
+  background:linear-gradient(150deg,#fff4d8,#e6fbf2 70%);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.9), 0 6px 14px rgba(35,48,74,.08);
+  font-size:24px; line-height:1;
+}
+.brand-text{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+.brand-text b{ font-size:clamp(15px,1.6vw,19px); font-weight:800; letter-spacing:-.3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.brand-text small{ font-size:11.5px; color:var(--muted); font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.tabs{ display:flex; gap:4px; padding:4px; background:#eef4fb; border-radius:999px; flex:0 0 auto; }
+.tab{
+  display:inline-flex; align-items:center; gap:7px;
+  padding:10px 16px; min-height:42px; border-radius:999px;
+  font-size:14.5px; font-weight:800; color:var(--muted); white-space:nowrap;
+  transition:background .18s ease, color .18s ease, transform .12s ease;
+}
+.tab:active{ transform:scale(.97); }
+.tab.active{ background:#fff; color:var(--ink); box-shadow:0 4px 12px rgba(35,48,74,.10); }
+.tab-badge{
+  font-size:12px; font-weight:800; padding:2px 8px; border-radius:999px;
+  background:var(--mint-soft); color:var(--mint-ink);
+}
+.tab.active .tab-badge{ background:var(--mint); color:#fff; }
+.top-actions{ display:flex; gap:6px; margin-left:auto; }
+.icon-btn{
+  width:44px; height:44px; border-radius:14px; display:grid; place-items:center;
+  font-size:20px; background:#fff; box-shadow:var(--shadow-sm);
+  transition:transform .12s ease, background .18s ease;
+}
+.icon-btn:active{ transform:scale(.93); background:#f2f8ff; }
+.icon-btn.is-off{ opacity:.55; }
+
+main{ flex:1 1 auto; display:flex; flex-direction:column; min-height:0; }
+.view{ display:none; flex:1 1 auto; flex-direction:column; min-height:0; }
+.view.active{ display:flex; animation:viewIn .28s ease both; }
+@keyframes viewIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+
+/* ============ 대시보드 그리드 ============ */
+.dash{
+  flex:1 1 auto; display:grid; gap:clamp(10px,1.4vw,18px);
+  grid-template-columns:1fr; align-content:start;
+}
+
+/* 시계 카드 */
+.card{
+  background:var(--card); border-radius:var(--r-xl); box-shadow:var(--shadow-lg);
+  border:1px solid rgba(255,255,255,.9); position:relative; overflow:hidden;
+}
+.clock-card{
+  padding:clamp(14px,1.8vw,24px) clamp(14px,2vw,26px) clamp(14px,1.8vw,22px);
+  display:flex; flex-direction:column; gap:12px;
+  background:
+    radial-gradient(560px 260px at 88% -20%, #e8fbff 0%, rgba(232,251,255,0) 70%),
+    linear-gradient(160deg,#ffffff 0%,#f6fcff 60%,#f2fdf8 100%);
+}
+.clock-card::after{
+  content:"🦕"; position:absolute; right:-6px; bottom:-28px;
+  font-size:clamp(120px,14vw,190px); line-height:1; opacity:.055; transform:rotate(-8deg);
+  pointer-events:none;
+}
+.clock-top{ display:flex; flex-direction:column; gap:6px; position:relative; z-index:1; }
+.date-line{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:clamp(12.5px,1.35vw,15px); color:var(--ink2); font-weight:700; }
+.date-line .dot{ color:#c3d0e6; }
+.date-line .greet{ color:var(--muted); font-weight:600; }
+.clock-time{
+  display:flex; align-items:baseline; gap:2px;
+  font-size:clamp(46px,7vw,82px); font-weight:800; letter-spacing:-2.5px;
+  line-height:.98; font-variant-numeric:tabular-nums; color:var(--ink);
+}
+.clock-time .sec{ font-size:.42em; font-weight:800; color:var(--mint-ink); letter-spacing:0; margin-left:4px; }
+.countdown{
+  position:relative; z-index:1; border-radius:var(--r-lg); padding:12px 16px 13px;
+  background:linear-gradient(135deg,#e9fbf4 0%,#e8f4ff 100%);
+  box-shadow:inset 0 0 0 1.5px #d5f2e6;
+  display:flex; flex-direction:column; gap:1px;
+  transition:background .4s ease, box-shadow .4s ease;
+}
+.cd-label{ font-size:clamp(12px,1.25vw,14px); font-weight:800; color:var(--mint-ink); opacity:.85; letter-spacing:.2px; }
+.cd-label b{ font-variant-numeric:tabular-nums; }
+.cd-value{
+  font-size:clamp(30px,4.1vw,50px); font-weight:800; letter-spacing:-1.4px; line-height:1.12;
+  color:var(--mint-ink); font-variant-numeric:tabular-nums;
+  display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;
+}
+.cd-value .unit{ font-size:.55em; letter-spacing:-.4px; }
+.cd-sub{ font-size:clamp(12.5px,1.3vw,15px); font-weight:700; color:#4d6b64; }
+.countdown.urgent{ background:linear-gradient(135deg,#fff2ea,#ffe9e4); box-shadow:inset 0 0 0 1.5px #ffd3c8; }
+.countdown.urgent .cd-label, .countdown.urgent .cd-value{ color:#d9503a; }
+.countdown.urgent .cd-sub{ color:#a9604f; }
+.countdown.go{ background:linear-gradient(135deg,#fff6e2,#ffeecd); box-shadow:inset 0 0 0 1.5px #ffe0a8; }
+.countdown.go .cd-label, .countdown.go .cd-value{ color:#b87500; }
+.countdown.go .cd-sub{ color:#9a6c1c; }
+.countdown.done{ background:linear-gradient(135deg,#e7fff4,#d9f8ff); box-shadow:inset 0 0 0 1.5px #b6f0d8; }
+
+/* 진행 트랙 */
+.track{ position:relative; height:52px; margin-top:2px; z-index:1; }
+.track-rail{
+  position:absolute; left:16px; right:44px; top:50%; transform:translateY(-50%);
+  height:12px; border-radius:999px; background:#e8eef7;
+  box-shadow:inset 0 1px 3px rgba(35,48,74,.08);
+  overflow:hidden;
+}
+.track-fill{
+  height:100%; width:var(--p,0%); border-radius:999px;
+  background:linear-gradient(90deg,#8ee7c6,#33d29c 70%,#25c4a4);
+  transition:width .6s cubic-bezier(.3,1.4,.5,1);
+  box-shadow:0 0 12px rgba(51,210,156,.55);
+}
+.track-steps{ position:absolute; left:16px; right:44px; top:0; bottom:0; }
+.track-step{
+  position:absolute; top:50%; transform:translate(-50%,-50%);
+  font-size:15px; opacity:.28; transition:opacity .3s ease, transform .3s ease;
+  filter:grayscale(.35);
+}
+.track-step.on{ opacity:.95; filter:none; transform:translate(-50%,-50%) scale(1.08); }
+.track-runner{
+  position:absolute; top:50%; left:calc(18px + (100% - 62px) * var(--pf,0));
+  transform:translate(-50%,-50%); width:40px; height:40px;
+  margin-left:0; display:grid; place-items:center; font-size:27px;
+  transition:left .6s cubic-bezier(.3,1.4,.5,1);
+  animation:runnerBob 1.8s ease-in-out infinite; will-change:left;
+}
+@keyframes runnerBob{ 0%,100%{ transform:translate(-50%,-56%); } 50%{ transform:translate(-50%,-44%); } }
+.track-goal{
+  position:absolute; right:0; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:14px; background:#fff; box-shadow:var(--shadow-sm);
+  display:grid; place-items:center; font-size:23px;
+}
+.next-hint{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  font-size:clamp(13px,1.35vw,15px); font-weight:700; color:var(--ink2);
+  position:relative; z-index:1;
+}
+.next-hint .pill{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px;
+  background:var(--amber-soft); color:var(--amber-ink); font-weight:800;
+  box-shadow:inset 0 0 0 1px #ffe6b6;
+}
+.next-hint .pill.ok{ background:var(--mint-soft); color:var(--mint-ink); box-shadow:inset 0 0 0 1px #c6f2e0; }
+
+/* 루틴 카드 */
+.routine-card{ padding:clamp(12px,1.5vw,20px); display:flex; flex-direction:column; gap:10px; }
+.routine-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:2px 4px 0; }
+.routine-head h2{ font-size:clamp(17px,1.8vw,22px); font-weight:800; letter-spacing:-.4px; display:flex; align-items:center; gap:8px; }
+.routine-head h2 .dot{ width:9px; height:9px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 4px rgba(51,210,156,.16); }
+.routine-progress{
+  display:flex; align-items:baseline; gap:2px; font-weight:800; color:var(--muted);
+  font-variant-numeric:tabular-nums; font-size:14px;
+  background:#f4f8fe; border-radius:999px; padding:6px 12px;
+}
+.routine-progress b{ font-size:20px; color:var(--ink); }
+.routine-list{
+  display:grid; gap:9px; grid-template-columns:1fr;
+  align-content:start; flex:1 1 auto;
+}
+.mission{
+  position:relative; display:flex; align-items:center; gap:12px;
+  width:100%; text-align:left; min-height:64px;
+  padding:10px 14px 10px 10px; border-radius:var(--r-md);
+  background:#f8fbff; border:2px solid #e8eef7;
+  transition:transform .14s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+  overflow:visible;
+}
+.mission:active{ transform:scale(.982); }
+.m-icon{
+  flex:0 0 46px; width:46px; height:46px; border-radius:15px;
+  display:grid; place-items:center; font-size:24px; line-height:1;
+  background:linear-gradient(160deg,#eef6ff,#f7fbff);
+  box-shadow:inset 0 0 0 1px #e6eefa;
+  transition:background .22s ease, box-shadow .22s ease;
+}
+.m-check{
+  flex:0 0 44px; width:44px; height:44px; border-radius:50%;
+  display:grid; place-items:center; background:#fff;
+  border:3px dashed #cfdcee; color:#fff;
+  transition:background .22s ease, border-color .22s ease, transform .22s ease;
+}
+.m-check svg{ width:22px; height:22px; opacity:0; transform:scale(.6); transition:opacity .2s ease, transform .25s cubic-bezier(.2,1.6,.4,1); }
+.mission.done{ background:linear-gradient(135deg,#eafcf5,#dcf9ec); border-color:#a9ebcf; }
+.mission.done .m-icon{ background:linear-gradient(160deg,#d3f8e8,#eefdf6); box-shadow:inset 0 0 0 1px #b8f0d9; }
+.mission.done .m-check{ background:linear-gradient(140deg,#4ee0ac,#1fc08d); border:3px solid #1fc08d; box-shadow:0 4px 12px rgba(31,192,141,.35); }
+.mission.done .m-check{ background:linear-gradient(140deg,#4ee0ac,#1fc08d); border:3px solid #1fc08d; box-shadow:0 4px 12px rgba(31,192,141,.35); }
+.mission.done .m-check svg{ opacity:1; transform:scale(1); }
+.mission.done .m-label{ color:#12805f; }
+.mission.done .m-time{ background:#ffffffb0; color:#0f8f68; }
+.mission.next{ border-color:#ffd88a; box-shadow:0 0 0 4px rgba(255,209,102,.18), 0 8px 20px rgba(255,180,58,.10); animation:nextPulse 2.6s ease-in-out infinite; }
+@keyframes nextPulse{ 0%,100%{ box-shadow:0 0 0 4px rgba(255,209,102,.16), 0 8px 20px rgba(255,180,58,.08); } 50%{ box-shadow:0 0 0 8px rgba(255,209,102,.10), 0 10px 24px rgba(255,180,58,.16); } }
+.mission.next .m-badge{ opacity:1; transform:translateY(0) scale(1); }
+.mission.next.overdue{ border-color:#ffb9a9; box-shadow:0 0 0 4px rgba(255,125,107,.14); }
+.mission.next.overdue .m-badge{ background:var(--coral); }
+.mission.just-done .m-check{ animation:checkPop .5s cubic-bezier(.2,1.6,.4,1); }
+@keyframes checkPop{ 0%{ transform:scale(.75); } 55%{ transform:scale(1.18); } 100%{ transform:scale(1); } }
+.m-body{ display:flex; flex-direction:column; gap:5px; min-width:0; flex:1 1 auto; }
+.m-time{
+  align-self:flex-start;
+  font-size:11.5px; font-weight:800; letter-spacing:.3px; color:var(--muted);
+  background:#eef4fb; border-radius:8px; padding:2px 7px; font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.m-time.none{ display:none; }
+.m-label{ font-size:clamp(15.5px,1.65vw,19px); font-weight:700; letter-spacing:-.3px; color:var(--ink); line-height:1.3; }
+.m-badge{
+  position:absolute; top:-9px; right:10px; opacity:0; transform:translateY(4px) scale(.9);
+  background:var(--amber); color:#fff; font-size:11px; font-weight:800;
+  padding:3px 9px; border-radius:999px; box-shadow:0 4px 10px rgba(255,180,58,.35);
+  transition:opacity .2s ease, transform .2s ease, background .2s ease;
+  letter-spacing:.2px;
+}
+.routine-foot{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:10px 12px; border-radius:var(--r-md); background:#f6faff;
+  font-size:13.5px; font-weight:700; color:var(--ink2);
+  border:1px dashed #dde8f6;
+}
+.routine-foot .btn{ margin-left:auto; }
+.foot-dino{ display:flex; align-items:center; gap:8px; }
+.foot-dino svg{ width:38px; height:38px; }
+
+/* ============ 공룡 도감 ============ */
+.dex-head{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:14px clamp(14px,1.8vw,22px); margin-bottom:12px;
+  background:rgba(255,255,255,.85); border-radius:var(--r-lg); box-shadow:var(--shadow-sm);
+  border:1px solid #fff;
+}
+.dex-title{ display:flex; flex-direction:column; gap:2px; }
+.dex-title h2{ font-size:clamp(18px,2vw,24px); font-weight:800; letter-spacing:-.5px; }
+.dex-title p{ font-size:13px; color:var(--muted); font-weight:600; }
+.dex-count{ margin-left:auto; display:flex; align-items:center; gap:12px; }
+.dex-count b{ font-size:clamp(24px,3vw,34px); font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-1px; }
+.dex-count b span{ font-size:.5em; color:var(--muted); font-weight:800; }
+.ring{ width:54px; height:54px; transform:rotate(-90deg); }
+.ring circle{ fill:none; stroke-width:8; stroke-linecap:round; }
+.ring .bg{ stroke:#e8eef7; }
+.ring .fg{ stroke:url(#ringGrad); transition:stroke-dashoffset .8s cubic-bezier(.3,1.2,.5,1); }
+.dex-grid{
+  display:grid; gap:clamp(9px,1.1vw,14px);
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  align-content:start; padding-bottom:10px;
+}
+.dex-card{
+  position:relative; border-radius:var(--r-lg); background:#fff; box-shadow:var(--shadow-sm);
+  padding:10px 10px 12px; text-align:center; overflow:hidden;
+  border:2px solid #fff; transition:transform .16s ease, box-shadow .2s ease;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  animation:cardIn .4s ease both;
+}
+@keyframes cardIn{ from{ opacity:0; transform:translateY(10px) scale(.97); } to{ opacity:1; transform:none; } }
+.dex-card:active{ transform:scale(.98); }
+.dex-card.owned.rarity-rare{ border-color:#e0d8ff; background:linear-gradient(180deg,#fdfbff,#f6f2ff); }
+.dex-card.owned.rarity-legend{ border-color:#ffe4a1; background:linear-gradient(180deg,#fffdf3,#fff6dc); box-shadow:0 10px 24px rgba(247,201,72,.20); }
+.dex-card.unknown{ background:#f4f7fc; border-color:#eef3fa; }
+.dex-art{ width:100%; aspect-ratio:1/1; display:grid; place-items:center; }
+.dex-art svg{ width:100%; height:100%; }
+.dex-card.unknown .dex-art svg{ filter:grayscale(1) brightness(.45) opacity(.42); }
+.dex-card.unknown .dex-art{ position:relative; }
+.dex-card.unknown .dex-art::after{
+  content:"?"; position:absolute; inset:0; display:grid; place-items:center;
+  font-size:clamp(30px,3.6vw,42px); font-weight:800; color:#b9c7dc;
+}
+.dex-name{ font-size:14.5px; font-weight:800; letter-spacing:-.3px; line-height:1.25; }
+.dex-card.unknown .dex-name{ color:#a9b7cc; }
+.dex-sub{ font-size:11px; font-weight:700; color:var(--muted); }
+.dex-card.unknown .dex-sub{ color:#bcc8da; }
+.rarity-chip{
+  position:absolute; top:8px; left:8px; font-size:10.5px; font-weight:800;
+  padding:3px 8px; border-radius:999px; letter-spacing:.2px;
+}
+.rarity-chip.common{ background:#eaf1fb; color:#5b7bab; }
+.rarity-chip.rare{ background:#efeaff; color:#6f52e0; }
+.rarity-chip.legend{ background:linear-gradient(135deg,#ffe9a8,#ffd36b); color:#8e6200; box-shadow:0 2px 8px rgba(247,201,72,.35); }
+.count-chip{
+  position:absolute; top:8px; right:8px; font-size:10.5px; font-weight:800;
+  padding:3px 7px; border-radius:999px; background:#fff; color:var(--ink2);
+  box-shadow:0 2px 6px rgba(35,48,74,.10);
+}
+.dex-card.owned.rarity-legend .count-chip{ background:#fff8e4; color:#9a6c00; }
+.dex-note{
+  padding:10px 16px 16px; font-size:12.5px; color:var(--muted); font-weight:600; text-align:center;
+}
+
+/* ============ 버튼/공통 ============ */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height:44px; padding:10px 18px; border-radius:14px;
+  font-size:14.5px; font-weight:800; letter-spacing:-.2px;
+  background:#fff; color:var(--ink); box-shadow:0 3px 10px rgba(35,48,74,.10);
+  transition:transform .12s ease, filter .18s ease, box-shadow .2s ease;
+  border:1px solid #eaf0f9;
+}
+.btn:active{ transform:scale(.97); }
+.btn.primary{ background:linear-gradient(140deg,#3ddca6,#14b98a); color:#fff; border-color:transparent; box-shadow:0 10px 22px rgba(20,185,138,.30); }
+.btn.amber{ background:linear-gradient(140deg,#ffc65c,#ffab2e); color:#fff; border-color:transparent; box-shadow:0 10px 22px rgba(255,171,46,.30); }
+.btn.ghost{ background:#f4f8fe; border-color:#e6eef8; box-shadow:none; color:var(--ink2); }
+.btn.danger{ background:#fff1ee; color:#d9503a; border-color:#ffd9d1; box-shadow:none; }
+.btn.small{ min-height:36px; padding:6px 12px; font-size:12.5px; border-radius:11px; }
+.btn.block{ width:100%; }
+.btn:disabled{ opacity:.5; }
+
+/* ============ 오버레이 공통 ============ */
+.overlay{
+  position:fixed; inset:0; z-index:60; display:none;
+  align-items:center; justify-content:center;
+  padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
+  background:rgba(21,34,54,.42);
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+  backdrop-filter:blur(10px) saturate(120%);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+}
+.overlay.show{ display:flex; animation:fadeIn .22s ease both; }
+@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+
+/* ============ 알 부화 ============ */
+.hatch-stage{
+  position:relative; width:100%; max-width:520px; display:flex; flex-direction:column;
+  align-items:center; gap:8px; padding:8px; margin:auto;
+}
+.egg-wrap{ position:relative; width:min(50vh,330px); aspect-ratio:1/1.06; display:grid; place-items:center; }
+.egg-glow{
+  position:absolute; inset:-6%; border-radius:50%;
+  background:radial-gradient(circle at 50% 55%, rgba(255,238,178,.95), rgba(255,238,178,0) 62%);
+  opacity:0; transition:opacity .5s ease; pointer-events:none;
+}
+.egg-wrap.glow .egg-glow{ opacity:.95; animation:glowPulse 2.2s ease-in-out infinite; }
+.egg-wrap.gold .egg-glow{ background:radial-gradient(circle at 50% 55%, rgba(255,214,102,.95), rgba(255,214,102,0) 64%); opacity:.75; }
+@keyframes glowPulse{ 0%,100%{ transform:scale(1); opacity:.72; } 50%{ transform:scale(1.08); opacity:1; } }
+.egg-btn{
+  position:relative; width:100%; height:100%; padding:0; background:none;
+  display:grid; place-items:center; transition:transform .12s ease;
+  animation:eggBob 2.6s ease-in-out infinite;
+}
+.egg-btn:active{ transform:scale(.96); }
+.egg-wrap.tap1 .egg-btn{ animation:eggShake .45s ease; }
+.egg-wrap.tap2 .egg-btn{ animation:eggShake .4s ease; }
+@keyframes eggBob{ 0%,100%{ transform:translateY(-6px) rotate(-1.2deg); } 50%{ transform:translateY(4px) rotate(1.2deg); } }
+@keyframes eggShake{ 0%{ transform:rotate(0); } 20%{ transform:rotate(-7deg) scale(1.03); } 45%{ transform:rotate(6deg) scale(1.04); } 70%{ transform:rotate(-4deg); } 100%{ transform:rotate(0); } }
+.egg-svg{ width:100%; height:100%; overflow:visible; }
+.egg-svg .crack{ opacity:0; stroke:#7a6034; stroke-width:3.4; fill:none; stroke-linecap:round; stroke-linejoin:round; transition:opacity .18s ease; }
+.egg-svg .crack-1{ opacity:0; }
+.egg-svg .crack-2{ opacity:0; }
+.egg-svg .crack-3{ opacity:0; }
+.egg-svg[data-stage="1"] .crack-1{ opacity:.85; }
+.egg-svg[data-stage="2"] .crack-1, .egg-svg[data-stage="2"] .crack-2{ opacity:.9; }
+.egg-svg[data-stage="3"] .crack-1, .egg-svg[data-stage="3"] .crack-2, .egg-svg[data-stage="3"] .crack-3{ opacity:.95; }
+.egg-wrap.breaking .egg-btn{ animation:eggBreak .42s ease forwards; }
+@keyframes eggBreak{ 0%{ transform:scale(1); opacity:1; } 40%{ transform:scale(1.16) rotate(-3deg); opacity:1; } 100%{ transform:scale(.4) rotate(9deg); opacity:0; } }
+.egg-wrap.breaking .egg-btn{ pointer-events:none; }
+.shard{
+  position:absolute; width:34px; height:38px; border-radius:50% 50% 45% 45%/60% 60% 40% 40%;
+  background:linear-gradient(150deg,#fffdf5,#f0dcb2); box-shadow:inset -3px -4px 0 rgba(190,160,110,.35);
+  pointer-events:none; will-change:transform,opacity;
+}
+.flash{
+  position:absolute; inset:-20%; border-radius:50%; pointer-events:none; opacity:0;
+  background:radial-gradient(circle,rgba(255,255,255,.98),rgba(255,246,214,.65) 38%,rgba(255,246,214,0) 68%);
+}
+.egg-wrap.breaking .flash{ animation:flashOut .7s ease-out forwards; }
+@keyframes flashOut{ 0%{ opacity:0; transform:scale(.4); } 25%{ opacity:1; transform:scale(1); } 100%{ opacity:0; transform:scale(1.35); } }
+.hatch-hint{
+  margin-top:4px; text-align:center; color:#fff; font-weight:800; font-size:clamp(15px,2.2vw,18px);
+  text-shadow:0 2px 12px rgba(20,32,50,.35); display:flex; flex-direction:column; gap:6px; align-items:center;
+}
+.hatch-hint .dots{ display:flex; gap:7px; }
+.hatch-hint .dot{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.35); box-shadow:0 0 0 1px rgba(255,255,255,.5); transition:background .2s ease; }
+.hatch-hint .dot.on{ background:#fff; }
+.hatch-hint .egg-tag{
+  font-size:12.5px; font-weight:800; letter-spacing:.2px; padding:4px 12px; border-radius:999px;
+  background:rgba(255,255,255,.22); color:#fff; box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+}
+.hatch-hint .egg-tag.gold{ background:linear-gradient(135deg,#ffe9a0,#ffc94a); color:#7a5100; box-shadow:0 4px 14px rgba(247,201,72,.4); }
+.hatch-stage .close-x{
+  position:fixed; top:calc(14px + env(safe-area-inset-top)); right:14px; z-index:2;
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,.22); color:#fff; font-size:18px; display:grid; place-items:center;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+}
+
+/* 새 공룡 등장 */
+.reveal{ display:none; width:100%; flex-direction:column; align-items:center; }
+.hatch-stage.revealed .reveal{ display:flex; animation:revealIn .5s cubic-bezier(.2,1.3,.4,1) both; }
+.hatch-stage.revealed .egg-wrap, .hatch-stage.revealed .hatch-hint{ display:none; }
+@keyframes revealIn{ from{ opacity:0; transform:translateY(26px) scale(.94); } to{ opacity:1; transform:none; } }
+.dino-pop{ position:relative; width:min(38vh,252px); aspect-ratio:1/1; margin-bottom:-10px; }
+.dino-pop svg{ width:100%; height:100%; filter:drop-shadow(0 14px 18px rgba(20,32,50,.25)); }
+.dino-pop.pop{ animation:dinoPop .62s cubic-bezier(.2,1.6,.35,1) both; }
+@keyframes dinoPop{
+  0%{ transform:scale(.25) translateY(30px) rotate(-14deg); opacity:0; }
+  60%{ transform:scale(1.08) translateY(-8px) rotate(3deg); opacity:1; }
+  100%{ transform:scale(1) translateY(0) rotate(0); opacity:1; }
+}
+.dino-pop.pop::before{
+  content:""; position:absolute; inset:8%; border-radius:50%; z-index:-1;
+  background:radial-gradient(circle,rgba(255,255,255,.9),rgba(255,255,255,0) 70%);
+  animation:haloOut 1s ease-out .1s both;
+}
+@keyframes haloOut{ from{ transform:scale(.5); opacity:.9; } to{ transform:scale(1.5); opacity:0; } }
+.reveal-card{
+  width:100%; max-width:420px; background:#fff; border-radius:28px; padding:16px 18px 16px;
+  box-shadow:0 24px 60px rgba(16,28,46,.30); text-align:center; position:relative; overflow:hidden;
+}
+.reveal-card::before{
+  content:""; position:absolute; inset:0 0 auto; height:86px;
+  background:linear-gradient(180deg,#f2fbff,rgba(242,251,255,0));
+}
+.reveal-card.gold::before{ background:linear-gradient(180deg,#fff6d8,rgba(255,246,216,0)); }
+.rc-rarity{
+  position:relative; display:inline-flex; align-items:center; gap:6px;
+  font-size:12px; font-weight:800; padding:5px 14px; border-radius:999px; letter-spacing:.3px;
+}
+.rc-rarity.common{ background:#eaf1fb; color:#4f709f; }
+.rc-rarity.rare{ background:#efeaff; color:#6b4ce0; }
+.rc-rarity.legend{ background:linear-gradient(135deg,#ffe9a8,#ffd05e); color:#7f5800; }
+.reveal-card h3{ position:relative; font-size:clamp(21px,3vw,27px); font-weight:800; letter-spacing:-.7px; margin-top:6px; }
+.reveal-card .rc-en{ font-size:12px; font-weight:700; color:var(--muted); letter-spacing:.4px; }
+.reveal-card .rc-desc{
+  font-size:clamp(14px,1.7vw,16px); font-weight:700; color:var(--ink2); line-height:1.55;
+  margin:8px auto 10px; max-width:330px; word-break:keep-all;
+}
+.rc-meta{ font-size:12px; font-weight:700; color:var(--muted); margin-bottom:12px; }
+.rc-actions{ display:flex; gap:8px; justify-content:center; }
+
+/* 실패 화면 */
+.fail-card{
+  width:100%; max-width:420px; background:#fff; border-radius:28px; padding:22px 22px 18px;
+  text-align:center; box-shadow:0 24px 60px rgba(16,28,46,.3);
+}
+.fail-egg{ width:130px; margin:0 auto 6px; opacity:.85; filter:grayscale(.35); }
+.fail-card h3{ font-size:22px; font-weight:800; letter-spacing:-.5px; }
+.fail-card p{ font-size:14.5px; font-weight:700; color:var(--ink2); line-height:1.6; margin:8px 0 16px; word-break:keep-all; }
+
+/* ============ 설정 시트 ============ */
+.sheet{
+  width:100%; max-width:560px; max-height:calc(100vh - 32px);
+  max-height:calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  display:flex; flex-direction:column;
+  background:#fbfdff; border-radius:30px; box-shadow:0 30px 70px rgba(16,28,46,.32);
+  overflow:hidden; animation:sheetIn .3s cubic-bezier(.2,1.2,.4,1) both;
+}
+@keyframes sheetIn{ from{ opacity:0; transform:translateY(24px) scale(.98); } to{ opacity:1; transform:none; } }
+.sheet-head{
+  display:flex; align-items:center; gap:10px; padding:16px 18px;
+  border-bottom:1px solid var(--line); background:#fff;
+}
+.sheet-head h2{ font-size:19px; font-weight:800; letter-spacing:-.4px; display:flex; align-items:center; gap:8px; }
+.sheet-head .icon-btn{ margin-left:auto; width:38px; height:38px; box-shadow:none; background:#f2f7fd; font-size:16px; }
+.sheet-body{ overflow-y:auto; -webkit-overflow-scrolling:touch; flex:1 1 auto; min-height:0; padding:16px 18px 22px; display:flex; flex-direction:column; gap:18px; }
+.field{ display:flex; flex-direction:column; gap:8px; }
+.field-label{ font-size:13px; font-weight:800; color:var(--ink2); display:flex; align-items:center; gap:6px; }
+.field-help{ font-size:12px; font-weight:600; color:var(--muted); line-height:1.5; word-break:keep-all; }
+.segmented{ display:flex; gap:6px; padding:5px; background:#eef4fb; border-radius:16px; }
+.segmented button{
+  flex:1; min-height:46px; border-radius:12px; font-size:13.5px; font-weight:800; color:var(--muted);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  transition:background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.segmented button span{ font-size:11px; font-weight:700; opacity:.8; }
+.segmented button.on{ background:#fff; color:var(--ink); box-shadow:0 4px 12px rgba(35,48,74,.10); }
+.segmented button.on[data-mode="strict"]{ color:#c0492f; }
+.time-input, .text-input, .area-input{
+  width:100%; min-height:48px; padding:10px 14px; border-radius:14px;
+  border:1.5px solid var(--line2); background:#fff; font-size:15px; font-weight:800;
+  color:var(--ink); -webkit-appearance:none; appearance:none;
+}
+.time-input{ max-width:180px; text-align:center; font-size:20px; font-variant-numeric:tabular-nums; letter-spacing:1px; }
+.text-input:focus, .time-input:focus, .area-input:focus{ outline:none; border-color:#7cc7ff; box-shadow:0 0 0 4px rgba(124,199,255,.18); }
+.area-input{ min-height:96px; font-size:12.5px; font-weight:600; letter-spacing:0; resize:vertical; word-break:break-all; -webkit-user-select:text; user-select:text; }
+.routine-edit{ display:flex; flex-direction:column; gap:8px; }
+.r-edit-row{ display:flex; align-items:center; gap:6px; }
+.r-edit-row .time-input{ width:88px; min-height:44px; font-size:14px; letter-spacing:.3px; padding:8px 6px; }
+.r-edit-row .text-input{ min-height:44px; font-size:14px; padding:8px 12px; }
+.r-edit-row .del{
+  width:38px; height:38px; flex:0 0 38px; border-radius:11px; background:#fff1ee; color:#d9503a;
+  font-size:15px; display:grid; place-items:center;
+}
+.row{ display:flex; gap:8px; flex-wrap:wrap; }
+.row .btn{ flex:1 1 auto; }
+.divider{ height:1px; background:var(--line); margin:2px 0; }
+.section-title{ font-size:12px; font-weight:800; color:#9aa8c0; letter-spacing:.6px; text-transform:uppercase; margin-bottom:-8px; }
+.badge-soft{ font-size:11px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--mint-soft); color:var(--mint-ink); }
+
+/* 확인 대화상자 */
+.confirm-box{
+  width:100%; max-width:360px; background:#fff; border-radius:24px; padding:22px;
+  text-align:center; box-shadow:0 24px 60px rgba(16,28,46,.3);
+}
+.confirm-box h3{ font-size:18px; font-weight:800; letter-spacing:-.4px; }
+.confirm-box p{ font-size:13.5px; font-weight:600; color:var(--ink2); line-height:1.6; margin:8px 0 18px; word-break:keep-all; }
+.confirm-box .row .btn{ flex:1; }
+
+/* 토스트 */
+.toast{
+  position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); transform:translate(-50%,20px);
+  background:rgba(30,43,64,.94); color:#fff; font-size:13.5px; font-weight:700;
+  padding:11px 20px; border-radius:999px; box-shadow:0 12px 30px rgba(16,28,46,.3);
+  z-index:90; opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+  max-width:calc(100vw - 32px); text-align:center;
+}
+.toast.show{ opacity:1; transform:translate(-50%,0); }
+
+#confetti{ position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:70; }
+
+/* ============ 반응형 ============ */
+@media (max-width:699px){
+  .topbar{ gap:8px; padding:7px 8px; }
+  .brand{ order:1; flex:1 1 auto; }
+  .top-actions{ order:2; }
+  .tabs{ order:3; width:100%; }
+  .tab{ flex:1; justify-content:center; padding:9px 10px; font-size:13.5px; }
+  .brand-text small{ display:none; }
+  .routine-card{ padding:10px; }
+  .mission{ min-height:62px; padding:9px 12px 9px 9px; gap:10px; }
+  .clock-time{ letter-spacing:-2px; }
+  .dex-head{ padding:12px 14px; }
+  .dex-count b{ font-size:24px; }
+  .ring{ width:46px; height:46px; }
+}
+@media (min-width:560px){
+  .routine-list{ grid-template-columns:1fr 1fr; }
+  .dex-grid{ grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); }
+}
+@media (min-width:900px){
+  .dash{ grid-template-columns:minmax(330px,.86fr) minmax(400px,1.14fr); align-items:stretch; align-content:stretch; }
+  .clock-card{ justify-content:flex-start; gap:clamp(14px,2.2vh,26px); }
+  .clock-card .countdown{ margin-top:auto; margin-bottom:auto; }
+  .routine-card{ justify-content:flex-start; }
+  .routine-list{ align-content:space-evenly; flex:1 1 auto; gap:10px; }
+}
+@media (min-width:900px) and (min-height:700px){
+  .clock-time{ font-size:clamp(60px,9.4vh,110px); }
+  .cd-value{ font-size:clamp(34px,5.6vh,56px); }
+  .countdown{ padding:clamp(14px,2.2vh,22px) 20px; }
+  .routine-list{ grid-auto-rows:minmax(92px,146px); align-content:center; }
+  .mission{ min-height:0; padding:12px 16px; gap:14px; }
+  .m-icon{ flex-basis:60px; width:60px; height:60px; font-size:30px; border-radius:19px; }
+  .m-check{ flex-basis:50px; width:50px; height:50px; }
+  .m-check svg{ width:26px; height:26px; }
+  .m-label{ font-size:clamp(18px,2.3vh,25px); }
+  .m-time{ font-size:12.5px; padding:3px 9px; }
+}
+@media (min-width:700px) and (orientation:portrait){
+  .dash{ grid-template-rows:auto 1fr; }
+  .routine-card{ min-height:0; }
+  .routine-list{ grid-auto-rows:minmax(78px,150px); align-content:center; }
+  .routine-head{ padding-top:6px; }
+}
+@media (orientation:landscape) and (max-height:520px){
+  .brand-text small{ display:none; }
+  .tabs{ margin-left:0; }
+  .clock-time{ font-size:40px; }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.08s !important; }
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ===== 상단 ===== -->
+  <header class="topbar">
+    <button class="brand" id="brandBtn" aria-label="진우의 공룡 등원 대시보드 (길게 누르면 부모님 설정)">
+      <span class="brand-mark" aria-hidden="true">🥚</span>
+      <span class="brand-text">
+        <b>진우의 공룡 등원 대시보드</b>
+        <small id="brandSub">오늘도 신나게 출발해요!</small>
+      </span>
+    </button>
+
+    <nav class="tabs" role="tablist" aria-label="화면 전환">
+      <button class="tab active" id="tabMission" role="tab" aria-selected="true" data-view="mission">오늘의 미션</button>
+      <button class="tab" id="tabDex" role="tab" aria-selected="false" data-view="dex">공룡 도감 <span class="tab-badge" id="dexBadge">0/12</span></button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="soundBtn" aria-label="소리 끄기" title="소리">🔊</button>
+      <button class="icon-btn" id="settingsBtn" aria-label="부모님 설정" title="부모님 설정">⚙️</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 오늘의 미션 ===== -->
+    <section class="view active" id="view-mission" role="tabpanel" aria-labelledby="tabMission">
+      <div class="dash">
+
+        <div class="card clock-card">
+          <div class="clock-top">
+            <div class="date-line">
+              <span id="todayLabel">11월 19일 목요일</span>
+              <span class="dot">·</span>
+              <span class="greet" id="greetText">좋은 아침이에요, 진우!</span>
+            </div>
+            <div class="clock-time" id="clockTime">07:10<span class="sec">:00</span></div>
+          </div>
+
+          <div class="countdown" id="countdownBox" aria-live="off">
+            <div class="cd-label">출발 시각 <b id="targetLabel">08:45</b> 까지</div>
+            <div class="cd-value" id="cdValue">1시간 35분</div>
+            <div class="cd-sub" id="cdSub">남았어요!</div>
+          </div>
+
+          <div class="track" id="track" aria-hidden="true">
+            <div class="track-rail"><div class="track-fill" id="trackFill"></div></div>
+            <div class="track-steps" id="trackSteps"></div>
+            <div class="track-runner" id="trackRunner">🥚</div>
+            <div class="track-goal">🏫</div>
+          </div>
+
+          <div class="next-hint" id="nextHint">
+            <span class="pill" id="nextPill">다음 미션 · 양치 · 세수</span>
+          </div>
+        </div>
+
+        <div class="card routine-card">
+          <div class="routine-head">
+            <h2><span class="dot" aria-hidden="true"></span>오늘의 미션</h2>
+            <div class="routine-progress"><b id="doneCount">0</b><span class="of">/ <span id="totalCount">6</span></span></div>
+          </div>
+
+          <div class="routine-list" id="routineList"></div>
+
+          <div class="routine-foot" id="routineFoot">
+            <span>6개를 모두 체크하면 공룡 알이 나타나요 🥚</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 공룡 도감 ===== -->
+    <section class="view" id="view-dex" role="tabpanel" aria-labelledby="tabDex">
+      <div class="dex-head">
+        <div class="dex-title">
+          <h2>공룡 도감</h2>
+          <p>알을 깨우면 친구가 한 명씩 늘어나요</p>
+        </div>
+        <div class="dex-count">
+          <b><span id="dexOwned">0</span><span> / 12</span></b>
+          <svg class="ring" viewBox="0 0 60 60" aria-hidden="true">
+            <defs>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#4ee0ac"/><stop offset="1" stop-color="#5ab6ff"/>
+              </linearGradient>
+            </defs>
+            <circle class="bg" cx="30" cy="30" r="25"></circle>
+            <circle class="fg" id="dexRing" cx="30" cy="30" r="25" stroke-dasharray="157.08" stroke-dashoffset="157.08"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="dex-grid" id="dexGrid"></div>
+      <p class="dex-note">희귀·전설 친구는 08:45 전에 미션을 끝내면 더 잘 나와요 ✨</p>
+    </section>
+  </main>
+</div>
+
+<!-- ===== 알 부화 ===== -->
+<div class="overlay" id="hatchOverlay" role="dialog" aria-modal="true" aria-label="공룡 알">
+  <div class="hatch-stage" id="hatchStage">
+    <button class="close-x hidden" id="hatchClose" aria-label="닫기">✕</button>
+
+    <div class="egg-wrap" id="eggWrap">
+      <div class="egg-glow"></div>
+      <div class="flash"></div>
+      <button class="egg-btn" id="eggBtn" aria-label="알 두드리기">
+        <svg class="egg-svg" id="eggSvg" viewBox="0 0 200 240" data-stage="0" aria-hidden="true"></svg>
+      </button>
+    </div>
+
+    <div class="hatch-hint" id="hatchHint">
+      <span class="egg-tag" id="eggTag">공룡 알</span>
+      <span id="hatchTitle">알을 톡톡 두드려 보세요!</span>
+      <span class="dots" id="hatchDots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span>
+    </div>
+
+    <div class="reveal" id="revealBox">
+      <div class="dino-pop" id="dinoPop"></div>
+      <div class="reveal-card" id="revealCard">
+        <span class="rc-rarity common" id="rcRarity">일반</span>
+        <h3 id="rcName">티라노사우루스</h3>
+        <div class="rc-en" id="rcEn">Tyrannosaurus</div>
+        <p class="rc-desc" id="rcDesc"></p>
+        <div class="rc-meta" id="rcMeta"></div>
+        <div class="rc-actions">
+          <button class="btn ghost" id="rcDexBtn">도감 보기</button>
+          <button class="btn primary" id="rcClose">좋아!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 부화 실패 ===== -->
+<div class="overlay" id="failOverlay" role="dialog" aria-modal="true" aria-label="부화 실패">
+  <div class="fail-card">
+    <div class="fail-egg" id="failEgg"></div>
+    <h3>아쉽지만 내일 다시 도전!</h3>
+    <p>엄격 모드에서는 <b id="failTarget">08:45</b> 전에 모두 끝내야 알이 부화해요.<br>내일은 꼭 황금알을 만나요!</p>
+    <div class="row">
+      <button class="btn ghost" id="failSettings">설정 바꾸기</button>
+      <button class="btn primary" id="failClose">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 부모님 설정 ===== -->
+<div class="overlay" id="settingsOverlay" role="dialog" aria-modal="true" aria-label="부모님 설정">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>⚙️ 부모님 설정</h2>
+      <button class="icon-btn" id="settingsClose" aria-label="닫기">✕</button>
+    </div>
+    <div class="sheet-body">
+
+      <div class="section-title">성공 기준</div>
+      <div class="field">
+        <div class="segmented" id="modeSeg">
+          <button data-mode="motivate" class="on">동기부여형<span>늦어도 부화 OK</span></button>
+          <button data-mode="strict">엄격형<span>08:45 넘으면 실패</span></button>
+        </div>
+        <p class="field-help" id="modeHelp">08:45 전에 6개를 모두 끝내면 <b>황금알</b>(희귀·전설 확률 대폭 UP). 늦어도 일반 알이 부화해요.</p>
+      </div>
+
+      <div class="field">
+        <div class="field-label">목표 출발 시각</div>
+        <input class="time-input" id="targetInput" type="time" value="08:45" step="60" aria-label="목표 출발 시각">
+        <p class="field-help">이 시각까지 남은 시간이 위 카운트다운에 표시돼요.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">오전 루틴 <span class="badge-soft" id="routineBadge">6개</span></div>
+        <div class="routine-edit" id="routineEdit"></div>
+        <button class="btn ghost small" id="addRoutineBtn" style="align-self:flex-start">＋ 항목 추가</button>
+        <p class="field-help">시간은 비워도 되고, <b>~07:30</b>처럼 적어도 괜찮아요.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">오늘 테스트</div>
+        <div class="row">
+          <button class="btn ghost" id="resetTodayBtn">오늘 체크 초기화</button>
+          <button class="btn amber" id="previewBtn">🥚 부화 미리보기</button>
+        </div>
+        <p class="field-help">미리보기는 도감에 저장되지 않아요. 알이 깨지는 모습을 먼저 확인해 보세요.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">도감 내보내기 · 불러오기</div>
+        <textarea class="area-input" id="dexCode" placeholder="내보내기를 누르면 코드가 나와요. 다른 기기에서는 코드를 붙여넣고 '불러오기'를 누르세요." spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+        <div class="row">
+          <button class="btn ghost" id="exportBtn">코드 복사</button>
+          <button class="btn ghost" id="importBtn">불러오기</button>
+        </div>
+        <p class="field-help" id="dexCodeHelp">도감만 옮겨요. 체크 상태와 설정은 기기마다 따로 저장돼요.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">도움말</div>
+        <p class="field-help">· 아이패드 홈 화면에 추가하면 앱처럼 전체 화면으로 열려요.<br>· 제목을 길게 눌러도 이 설정이 열려요.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== 확인 ===== -->
+<div class="overlay" id="confirmOverlay" role="dialog" aria-modal="true" aria-label="확인">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">정말 할까요?</h3>
+    <p id="confirmMsg"></p>
+    <div class="row">
+      <button class="btn ghost" id="confirmNo">취소</button>
+      <button class="btn primary" id="confirmYes">확인</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== 귀여운 아기 공룡 SVG (직접 그림) ===== */
+var ART = {};
+
+/* 공통 얼굴 조각 헬퍼 (문자열) */
+function eyes(cx1, cx2, cy, r, pr){
+  r = r || 13; pr = pr || 7.6;
+  var out = '';
+  [[cx1, 1], [cx2, -1]].forEach(function(p){
+    var x = p[0];
+    out += '<ellipse cx="'+x+'" cy="'+cy+'" rx="'+r+'" ry="'+(r*1.06)+'" fill="#ffffff"/>';
+    out += '<circle cx="'+(x+1.6)+'" cy="'+(cy+1)+'" r="'+pr+'" fill="#243247"/>';
+    out += '<circle cx="'+(x-0.8)+'" cy="'+(cy-2.6)+'" r="'+(pr*0.36)+'" fill="#ffffff"/>';
+    out += '<circle cx="'+(x+4.4)+'" cy="'+(cy+3.4)+'" r="'+(pr*0.18)+'" fill="#ffffff" opacity=".7"/>';
+  });
+  return out;
+}
+function blush(x1, x2, y, w){
+  w = w || 9;
+  return '<ellipse cx="'+x1+'" cy="'+y+'" rx="'+w+'" ry="'+(w*0.62)+'" fill="#ff8fa6" opacity=".42"/>' +
+         '<ellipse cx="'+x2+'" cy="'+y+'" rx="'+w+'" ry="'+(w*0.62)+'" fill="#ff8fa6" opacity=".42"/>';
+}
+function smile(cx, y, w, color){
+  return '<path d="M'+(cx-w)+' '+y+' Q'+cx+' '+(y+w*0.72)+' '+(cx+w)+' '+y+'" fill="none" stroke="'+(color||'#2f6f5c')+'" stroke-width="3.6" stroke-linecap="round"/>';
+}
+function shadow(rx, ry){
+  return '<ellipse cx="120" cy="214" rx="'+(rx||56)+'" ry="'+(ry||9.5)+'" fill="#1b2a44" opacity=".10"/>';
+}
+function star(x, y, s, color, op){
+  s = s || 8;
+  return '<path d="M'+x+' '+(y-s)+' L'+(x+s*0.26)+' '+(y-s*0.26)+' L'+(x+s)+' '+y+' L'+(x+s*0.26)+' '+(y+s*0.26)+
+         ' L'+x+' '+(y+s)+' L'+(x-s*0.26)+' '+(y+s*0.26)+' L'+(x-s)+' '+y+' L'+(x-s*0.26)+' '+(y-s*0.26)+' Z" fill="'+color+'" opacity="'+(op||1)+'"/>';
+}
+/* 뾰족뾰족 테두리(프릴) 생성 */
+function scallop(cx, cy, r, bumps, depth){
+  var d = '', n = bumps * 2, i, a, rr, x, y;
+  for (i = 0; i <= n; i++){
+    a = Math.PI * 2 * i / n - Math.PI / 2;
+    rr = (i % 2 === 0) ? r : r - (depth || 10);
+    x = cx + Math.cos(a) * rr;
+    y = cy + Math.sin(a) * rr;
+    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1);
+  }
+  return d + ' Z';
+}
+
+/* 1. 티라노사우루스 */
+ART.trex = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 티라노사우루스">' +
+  shadow(58) +
+  /* 꼬리 */
+  '<path d="M86 184 C62 196 38 192 24 174 C30 168 38 170 42 174 C52 184 68 182 88 172 Z" fill="#4fbd95"/>' +
+  /* 다리 */
+  '<path d="M98 176 C92 190 92 200 98 208 H124 C115 198 113 188 116 176 Z" fill="#4fbd95"/>' +
+  '<path d="M132 176 C130 188 132 198 138 208 H164 C154 198 152 188 154 176 Z" fill="#4fbd95"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#3aa887"/><ellipse cx="148" cy="208" rx="11" ry="5" fill="#3aa887"/>' +
+  /* 몸통 */
+  '<ellipse cx="120" cy="154" rx="46" ry="39" fill="#7bdbb2"/>' +
+  '<ellipse cx="120" cy="168" rx="27" ry="23" fill="#ddf9ed"/>' +
+  /* 팔 */
+  '<path d="M82 146 C75 151 72 158 75 165" stroke="#6ed5ab" stroke-width="12" stroke-linecap="round" fill="none"/>' +
+  '<path d="M158 146 C165 151 168 158 165 165" stroke="#6ed5ab" stroke-width="12" stroke-linecap="round" fill="none"/>' +
+  /* 등 돌기 */
+  '<path d="M92 46 l7 -14 9 13 Z" fill="#4fbd95"/><path d="M112 41 l7 -15 9 14 Z" fill="#4fbd95"/><path d="M132 46 l7 -13 8 12 Z" fill="#4fbd95"/>' +
+  /* 머리 */
+  '<ellipse cx="120" cy="90" rx="51" ry="46" fill="#8ce4bc"/>' +
+  /* 주둥이 */
+  '<ellipse cx="120" cy="108" rx="33" ry="21" fill="#b0f2d6"/>' +
+  '<circle cx="108" cy="100" r="2.7" fill="#4fbd95"/><circle cx="132" cy="100" r="2.7" fill="#4fbd95"/>' +
+  smile(120, 109, 13, '#2f7d64') +
+  '<path d="M112 112 l3.6 5 3.6 -5 Z" fill="#ffffff"/><path d="M124 112 l3.6 5 3.6 -5 Z" fill="#ffffff"/>' +
+  eyes(100, 140, 86, 13, 7.4) +
+  blush(80, 160, 100, 10) +
+  '</svg>';
+
+/* 2. 트리케라톱스 */
+ART.triceratops = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 트리케라톱스">' +
+  shadow(58) +
+  '<path d="M84 178 C60 190 34 186 24 168 C30 164 38 166 42 170 C52 180 68 176 88 168 Z" fill="#eb8f52"/>' +
+  '<path d="M96 172 C90 188 92 200 98 208 H122 C112 198 110 186 114 172 Z" fill="#eb8f52"/>' +
+  '<path d="M130 172 C128 186 130 198 136 208 H162 C152 198 150 186 152 172 Z" fill="#eb8f52"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#d47c41"/><ellipse cx="147" cy="208" rx="11" ry="5" fill="#d47c41"/>' +
+  '<ellipse cx="120" cy="158" rx="47" ry="35" fill="#ffb27a"/>' +
+  '<ellipse cx="120" cy="170" rx="26" ry="21" fill="#ffe7d6"/>' +
+  /* 프릴 */
+  '<g transform="translate(120 98) scale(1 .9) translate(-120 -98)">' +
+  '<path d="' + scallop(120, 98, 80, 9, 9) + '" fill="#ef8a48"/>' +
+  '<path d="' + scallop(120, 98, 70, 9, 8) + '" fill="#ffcb9e"/>' +
+  '<circle cx="120" cy="34" r="5" fill="#ffb27a"/><circle cx="78" cy="52" r="5" fill="#ffb27a"/><circle cx="162" cy="52" r="5" fill="#ffb27a"/>' +
+  '<circle cx="56" cy="90" r="5" fill="#ffb27a"/><circle cx="184" cy="90" r="5" fill="#ffb27a"/>' +
+  '</g>' +
+  /* 머리 */
+  '<ellipse cx="120" cy="100" rx="47" ry="42" fill="#ffb27a"/>' +
+  /* 뿔 */
+  '<path d="M80 76 Q64 50 58 22 Q84 42 96 62 Z" fill="#fff8e8" stroke="#e9d3ae" stroke-width="2.2" stroke-linejoin="round"/>' +
+  '<path d="M160 76 Q176 50 182 22 Q156 42 144 62 Z" fill="#fff8e8" stroke="#e9d3ae" stroke-width="2.2" stroke-linejoin="round"/>' +
+  '<ellipse cx="120" cy="101" rx="28" ry="15" fill="#ffd0ab"/>' +
+  '<circle cx="110" cy="97" r="2.6" fill="#e08a4f"/><circle cx="130" cy="97" r="2.6" fill="#e08a4f"/>' +
+  smile(120, 110, 11, '#a9622f') +
+  eyes(99, 141, 84, 12.5, 7.2) +
+  blush(81, 159, 99, 9.5) +
+  '</svg>';
+
+/* 3. 브라키오사우루스 */
+ART.brachiosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 브라키오사우루스">' +
+  shadow(60) +
+  '<path d="M66 180 C44 188 24 182 20 166 C26 162 32 162 36 166 C46 176 58 176 74 170 Z" fill="#5aa6d8"/>' +
+  '<path d="M86 172 C80 188 82 200 88 208 H110 C102 198 100 186 104 172 Z" fill="#5aa6d8"/>' +
+  '<path d="M124 174 C120 188 122 200 128 208 H150 C142 198 140 186 142 174 Z" fill="#5aa6d8"/>' +
+  '<ellipse cx="98" cy="208" rx="11" ry="5" fill="#4a92c2"/><ellipse cx="138" cy="208" rx="11" ry="5" fill="#4a92c2"/>' +
+  '<ellipse cx="118" cy="166" rx="62" ry="34" fill="#7ec8f5"/>' +
+  '<ellipse cx="112" cy="176" rx="38" ry="20" fill="#e0f4ff"/>' +
+  '<circle cx="96" cy="156" r="6" fill="#63b4e6" opacity=".5"/><circle cx="128" cy="160" r="4.5" fill="#63b4e6" opacity=".5"/><circle cx="152" cy="158" r="5" fill="#63b4e6" opacity=".5"/>' +
+  /* 목 */
+  '<path d="M148 162 C138 138 128 108 132 84 C136 62 152 52 166 58 C180 64 182 84 176 102 C168 126 170 146 174 162 Z" fill="#7ec8f5"/>' +
+  '<path d="M152 158 C146 134 140 108 144 88" fill="none" stroke="#63b4e6" stroke-width="4" opacity=".3" stroke-linecap="round"/>' +
+  /* 머리 */
+  '<ellipse cx="162" cy="62" rx="34" ry="29" fill="#8dd2f8"/>' +
+  '<ellipse cx="160" cy="70" rx="22" ry="14" fill="#cdeeff"/>' +
+  '<circle cx="151" cy="64" r="2.4" fill="#5aa6d8"/><circle cx="169" cy="64" r="2.4" fill="#5aa6d8"/>' +
+  smile(160, 72, 9, '#3f87b8') +
+  '<ellipse cx="150" cy="50" rx="9" ry="9.5" fill="#fff"/><circle cx="151.4" cy="51" r="5.2" fill="#243247"/><circle cx="149.6" cy="48.6" r="1.9" fill="#fff"/>' +
+  '<ellipse cx="176" cy="50" rx="8" ry="8.5" fill="#fff"/><circle cx="175" cy="51" r="4.6" fill="#243247"/><circle cx="173.6" cy="48.8" r="1.7" fill="#fff"/>' +
+  '<ellipse cx="142" cy="64" rx="6" ry="3.8" fill="#ff8fa6" opacity=".4"/>' +
+  '<path d="M136 86 l-9 -5 3 10 Z" fill="#5aa6d8"/><path d="M132 108 l-8 -4 3 9 Z" fill="#5aa6d8"/>' +
+  '</svg>';
+
+/* 4. 스테고사우루스 */
+ART.stegosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 스테고사우루스">' +
+  shadow(58) +
+  /* 등판 */
+  '<g stroke="#e8b53c" stroke-width="2.4" stroke-linejoin="round">' +
+  '<path d="M40 154 L44 128 Q54 100 62 88 Q72 104 78 132 L80 154 Z" fill="#ffd977"/>' +
+  '<path d="M82 146 L86 114 Q96 80 110 62 Q122 84 126 118 L126 148 Z" fill="#ffe08a"/>' +
+  '<path d="M124 142 L128 110 Q138 78 152 66 Q162 88 162 120 L158 144 Z" fill="#ffd977"/>' +
+  '<path d="M158 152 L164 128 Q174 108 184 100 Q190 118 186 138 L180 154 Z" fill="#ffe08a"/>' +
+  '</g>' +
+  /* 꼬리 */
+  '<path d="M64 180 C42 186 24 178 20 162 C26 158 34 160 38 164 C46 172 56 172 68 170 Z" fill="#9d84e8"/>' +
+  '<path d="M24 164 l-7 -13 10 1 Z" fill="#ffd977"/><path d="M35 170 l-2 -14 10 4 Z" fill="#ffd977"/>' +
+  /* 다리 */
+  '<path d="M78 178 C72 190 74 200 80 208 H102 C94 198 92 188 96 178 Z" fill="#9d84e8"/>' +
+  '<path d="M132 178 C128 190 130 200 136 208 H158 C150 198 148 188 150 178 Z" fill="#9d84e8"/>' +
+  '<ellipse cx="90" cy="208" rx="11" ry="5" fill="#8871d4"/><ellipse cx="146" cy="208" rx="11" ry="5" fill="#8871d4"/>' +
+  /* 몸통 */
+  '<ellipse cx="112" cy="164" rx="58" ry="37" fill="#b39bf7"/>' +
+  '<ellipse cx="110" cy="174" rx="34" ry="21" fill="#eee7ff"/>' +
+  /* 머리 */
+  '<ellipse cx="174" cy="156" rx="33" ry="28" fill="#c0a9fb"/>' +
+  '<path d="M178 128 C188 120 198 122 202 130 C196 136 186 138 178 136 Z" fill="#a98cf2"/>' +
+  '<ellipse cx="180" cy="164" rx="20" ry="12" fill="#ded2ff"/>' +
+  '<circle cx="174" cy="161" r="2.3" fill="#8a6fe0"/><circle cx="188" cy="161" r="2.3" fill="#8a6fe0"/>' +
+  smile(181, 168, 7, '#6f57b8') +
+  '<ellipse cx="168" cy="144" rx="9.5" ry="10" fill="#fff"/><circle cx="169.4" cy="145" r="5.4" fill="#243247"/><circle cx="167.6" cy="142.4" r="2" fill="#fff"/>' +
+  '<ellipse cx="192" cy="144" rx="8" ry="8.6" fill="#fff"/><circle cx="191" cy="145" r="4.6" fill="#243247"/><circle cx="189.6" cy="142.8" r="1.7" fill="#fff"/>' +
+  '<ellipse cx="160" cy="156" rx="6" ry="3.8" fill="#ff8fa6" opacity=".4"/>' +
+  '</svg>';
+
+/* 5. 프테라노돈 */
+ART.pteranodon = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 프테라노돈">' +
+  '<ellipse cx="120" cy="216" rx="44" ry="7" fill="#1b2a44" opacity=".08"/>' +
+  /* 날개 */
+  '<path d="M92 132 C64 126 36 106 16 78 C10 64 20 54 33 59 C47 64 60 78 70 94 C80 110 88 124 94 130 Z" fill="#ffb9d3"/>' +
+  '<path d="M148 132 C176 126 204 106 224 78 C230 64 220 54 207 59 C193 64 180 78 170 94 C160 110 152 124 146 130 Z" fill="#ffb9d3"/>' +
+  '<path d="M92 132 C68 122 46 104 30 82 C50 82 70 96 82 116 Z" fill="#ff8fb8" opacity=".45"/>' +
+  '<path d="M148 132 C172 122 194 104 210 82 C190 82 170 96 158 116 Z" fill="#ff8fb8" opacity=".45"/>' +
+  '<path d="M94 130 C70 118 48 96 30 70" fill="none" stroke="#ff8fb8" stroke-width="3" opacity=".55" stroke-linecap="round"/>' +
+  '<path d="M146 130 C170 118 192 96 210 70" fill="none" stroke="#ff8fb8" stroke-width="3" opacity=".55" stroke-linecap="round"/>' +
+  /* 다리 */
+  '<path d="M110 178 C108 190 110 198 114 202" stroke="#ff9dc0" stroke-width="7" stroke-linecap="round" fill="none"/>' +
+  '<path d="M130 178 C132 190 130 198 126 202" stroke="#ff9dc0" stroke-width="7" stroke-linecap="round" fill="none"/>' +
+  /* 몸통 */
+  '<ellipse cx="120" cy="152" rx="28" ry="36" fill="#ffb9d3"/>' +
+  '<ellipse cx="120" cy="160" rx="15" ry="23" fill="#ffe3ee"/>' +
+  /* 볏 */
+  '<path d="M98 62 C76 54 56 40 48 24 C64 24 82 34 100 48 Z" fill="#ffd36b"/>' +
+  '<path d="M104 70 C84 64 68 54 58 42 C74 42 90 50 106 60 Z" fill="#ff8fb8"/>' +
+  /* 머리 */
+  '<ellipse cx="120" cy="84" rx="42" ry="38" fill="#ffb9d3"/>' +
+  /* 부리 */
+  '<path d="M120 94 L134 114 Q120 124 106 114 Z" fill="#fff0b8" stroke="#e8c97a" stroke-width="2" stroke-linejoin="round"/>' +
+  '<circle cx="114" cy="108" r="1.8" fill="#d9b45e"/><circle cx="126" cy="108" r="1.8" fill="#d9b45e"/>' +
+  eyes(101, 139, 78, 12.5, 7.2) +
+  blush(82, 158, 94, 9) +
+  star(40, 40, 6, '#ffffff', .9) + star(206, 112, 5, '#ffffff', .8) +
+  '</svg>';
+
+/* 6. 안킬로사우루스 */
+ART.ankylosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 안킬로사우루스">' +
+  shadow(60) +
+  '<path d="M56 178 C34 182 20 172 18 158 C24 154 32 156 36 162 C44 170 52 170 62 168 Z" fill="#8d6a3f"/>' +
+  '<circle cx="24" cy="158" r="13" fill="#a9834f"/><circle cx="24" cy="158" r="7" fill="#c9a06a"/>' +
+  '<path d="M82 182 C76 194 78 202 84 208 H106 C98 200 96 190 100 182 Z" fill="#a9834f"/>' +
+  '<path d="M130 182 C126 194 128 202 134 208 H156 C148 200 146 190 148 182 Z" fill="#a9834f"/>' +
+  '<ellipse cx="94" cy="208" rx="11" ry="5" fill="#8d6a3f"/><ellipse cx="144" cy="208" rx="11" ry="5" fill="#8d6a3f"/>' +
+  '<ellipse cx="110" cy="158" rx="62" ry="42" fill="#c9a06a"/>' +
+  '<path d="M58 146 C70 118 92 106 116 108 C142 110 162 126 166 148 C150 138 130 132 112 134 C90 136 72 140 58 146 Z" fill="#a9834f"/>' +
+  '<circle cx="86" cy="126" r="7" fill="#d8b47f"/><circle cx="108" cy="118" r="6" fill="#d8b47f"/><circle cx="132" cy="122" r="7" fill="#d8b47f"/>' +
+  '<circle cx="152" cy="136" r="5.5" fill="#d8b47f"/><circle cx="70" cy="140" r="5.5" fill="#d8b47f"/>' +
+  '<ellipse cx="110" cy="176" rx="38" ry="20" fill="#eed9b8"/>' +
+  '<ellipse cx="172" cy="160" rx="33" ry="28" fill="#d8b47f"/>' +
+  '<path d="M180 132 C190 126 200 130 202 138 C194 142 184 142 178 140 Z" fill="#c9a06a"/>' +
+  '<ellipse cx="177" cy="168" rx="19" ry="11" fill="#f4e6cd"/>' +
+  '<circle cx="171" cy="165" r="2.2" fill="#8d6a3f"/><circle cx="183" cy="165" r="2.2" fill="#8d6a3f"/>' +
+  smile(178, 171, 7, '#7d5a30') +
+  '<ellipse cx="167" cy="147" rx="9" ry="9.5" fill="#fff"/><circle cx="168.4" cy="148" r="5.2" fill="#243247"/><circle cx="166.6" cy="145.6" r="1.9" fill="#fff"/>' +
+  '<ellipse cx="190" cy="147" rx="7.6" ry="8" fill="#fff"/><circle cx="189" cy="148" r="4.4" fill="#243247"/><circle cx="187.8" cy="146" r="1.6" fill="#fff"/>' +
+  '<ellipse cx="159" cy="159" rx="6" ry="3.6" fill="#ff8fa6" opacity=".38"/>' +
+  '</svg>';
+
+/* 7. 벨로시랩터 */
+ART.velociraptor = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 벨로시랩터">' +
+  shadow(54) +
+  '<path d="M78 158 C52 160 30 146 24 122 C30 118 38 122 42 130 C50 146 62 150 82 148 Z" fill="#e8752f"/>' +
+  '<path d="M34 130 l-12 -4 6 -8 Z" fill="#ffd36b"/>' +
+  '<path d="M98 174 C92 188 94 200 100 208 H122 C114 198 112 186 116 174 Z" fill="#e8752f"/>' +
+  '<path d="M134 174 C132 188 134 198 140 208 H162 C154 198 152 186 154 174 Z" fill="#e8752f"/>' +
+  '<ellipse cx="109" cy="208" rx="10" ry="4.6" fill="#cf6428"/><ellipse cx="149" cy="208" rx="10" ry="4.6" fill="#cf6428"/>' +
+  '<ellipse cx="120" cy="150" rx="41" ry="37" fill="#ff9a5c"/>' +
+  '<ellipse cx="120" cy="162" rx="24" ry="23" fill="#ffe0c9"/>' +
+  '<path d="M138 126 C148 130 152 138 150 146" stroke="#e8752f" stroke-width="5" fill="none" stroke-linecap="round"/>' +
+  '<path d="M104 128 C96 132 92 140 94 148" stroke="#e8752f" stroke-width="5" fill="none" stroke-linecap="round"/>' +
+  '<path d="M104 50 C100 34 108 22 120 20 C114 32 114 42 118 52 Z" fill="#ffd36b"/>' +
+  '<path d="M120 46 C122 30 132 22 142 24 C132 34 128 42 128 52 Z" fill="#ff9a5c"/>' +
+  '<ellipse cx="120" cy="88" rx="46" ry="42" fill="#ffa96f"/>' +
+  '<path d="M74 96 C70 84 76 72 88 68 C84 80 82 88 82 96 Z" fill="#ffd36b"/>' +
+  '<path d="M166 96 C170 84 164 72 152 68 C156 80 158 88 158 96 Z" fill="#ffd36b"/>' +
+  '<ellipse cx="120" cy="104" rx="28" ry="18" fill="#ffe0c9"/>' +
+  '<circle cx="110" cy="99" r="2.4" fill="#d9662a"/><circle cx="130" cy="99" r="2.4" fill="#d9662a"/>' +
+  smile(120, 104, 11, '#b6541f') +
+  '<path d="M112 108 l3.4 4.6 3.4 -4.6 Z" fill="#fff"/><path d="M124 108 l3.4 4.6 3.4 -4.6 Z" fill="#fff"/>' +
+  eyes(99, 141, 84, 13, 7.6) +
+  blush(80, 160, 99, 9) +
+  '</svg>';
+
+/* 8. 스피노사우루스 */
+ART.spinosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 스피노사우루스">' +
+  shadow(58) +
+  /* 돛 */
+  '<path d="M56 168 C56 90 84 30 120 30 C156 30 184 90 184 168 Z" fill="#ff8a65"/>' +
+  '<path d="M74 168 C76 104 94 52 120 44 C146 52 164 104 166 168 Z" fill="#ffab8f" opacity=".5"/>' +
+  '<path d="M120 166 L70 62 M120 166 L96 36 M120 166 L144 36 M120 166 L170 62" stroke="#e86a45" stroke-width="2.4" opacity=".3" stroke-linecap="round"/>' +
+  /* 꼬리 */
+  '<path d="M84 180 C58 190 34 186 26 168 C32 164 40 166 44 170 C52 178 66 176 88 168 Z" fill="#2fa9ac"/>' +
+  /* 다리 */
+  '<path d="M96 176 C90 190 92 200 98 208 H122 C112 198 110 186 114 176 Z" fill="#2fa9ac"/>' +
+  '<path d="M130 176 C128 190 130 200 136 208 H162 C152 198 150 186 152 176 Z" fill="#2fa9ac"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#249093"/><ellipse cx="148" cy="208" rx="11" ry="5" fill="#249093"/>' +
+  /* 몸통 */
+  '<ellipse cx="120" cy="154" rx="45" ry="37" fill="#45c6c9"/>' +
+  '<ellipse cx="120" cy="166" rx="26" ry="22" fill="#c8f7f5"/>' +
+  /* 머리 */
+  '<ellipse cx="120" cy="94" rx="42" ry="36" fill="#54d3d6"/>' +
+  '<path d="M120 88 C146 88 164 98 166 108 C168 120 150 128 122 126 C98 124 84 116 86 106 C88 96 100 88 120 88 Z" fill="#7ee0e0"/>' +
+  '<path d="M94 112 C106 120 138 124 160 114" fill="none" stroke="#2b8f92" stroke-width="3.2" stroke-linecap="round"/>' +
+  '<circle cx="99" cy="104" r="2.2" fill="#2b8f92"/><circle cx="149" cy="102" r="2.2" fill="#2b8f92"/>' +
+  '<path d="M102 110 l3 4 3 -4 Z" fill="#fff"/><path d="M114 114 l3 4 3 -4 Z" fill="#fff"/><path d="M144 110 l3 4 3 -4 Z" fill="#fff"/>' +
+  eyes(97, 143, 84, 12.5, 7.2) +
+  blush(77, 163, 110, 8.5) +
+  '</svg>';
+
+/* 9. 파라사우롤로푸스 */
+ART.parasaurolophus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 파라사우롤로푸스">' +
+  shadow(56) +
+  /* 관 */
+  '<path d="M126 66 C144 50 168 41 188 42" fill="none" stroke="#ff9d5c" stroke-width="21" stroke-linecap="round"/>' +
+  '<path d="M130 64 C146 52 166 45 182 45" fill="none" stroke="#ffc38f" stroke-width="6" stroke-linecap="round" opacity=".9"/>' +
+  /* 꼬리 */
+  '<path d="M82 176 C56 186 32 180 24 162 C30 158 38 160 42 164 C50 172 64 170 86 164 Z" fill="#e8b53c"/>' +
+  /* 다리 */
+  '<path d="M96 176 C90 190 92 200 98 208 H122 C112 198 110 186 114 176 Z" fill="#e8b53c"/>' +
+  '<path d="M130 176 C128 190 130 200 136 208 H162 C152 198 150 186 152 176 Z" fill="#e8b53c"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#d2a02c"/><ellipse cx="148" cy="208" rx="11" ry="5" fill="#d2a02c"/>' +
+  /* 몸통 */
+  '<ellipse cx="120" cy="156" rx="43" ry="35" fill="#ffd469"/>' +
+  '<ellipse cx="120" cy="168" rx="25" ry="21" fill="#fff3cf"/>' +
+  /* 머리 */
+  '<ellipse cx="120" cy="90" rx="45" ry="41" fill="#ffdc7d"/>' +
+  '<ellipse cx="120" cy="108" rx="28" ry="18" fill="#ffeeb8"/>' +
+  '<circle cx="110" cy="102" r="2.4" fill="#d2a02c"/><circle cx="130" cy="102" r="2.4" fill="#d2a02c"/>' +
+  smile(120, 108, 11, '#b07f18') +
+  eyes(99, 141, 84, 12.5, 7.2) +
+  blush(80, 160, 100, 9) +
+  '</svg>';
+
+/* 10. 파키케팔로사우루스 */
+ART.pachycephalosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 파키케팔로사우루스">' +
+  shadow(56) +
+  '<path d="M82 174 C56 184 32 178 24 160 C30 156 38 158 42 162 C50 170 64 168 86 162 Z" fill="#6f8ac2"/>' +
+  '<path d="M96 178 C90 190 92 200 98 208 H122 C112 198 110 188 114 178 Z" fill="#6f8ac2"/>' +
+  '<path d="M130 178 C128 190 130 200 136 208 H162 C152 198 150 188 152 178 Z" fill="#6f8ac2"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#5f78ad"/><ellipse cx="148" cy="208" rx="11" ry="5" fill="#5f78ad"/>' +
+  '<ellipse cx="120" cy="158" rx="44" ry="36" fill="#8fa8d8"/>' +
+  '<ellipse cx="120" cy="170" rx="25" ry="21" fill="#e3ebfb"/>' +
+  '<path d="M78 92 C78 56 96 36 120 36 C144 36 162 56 162 92 C150 84 136 80 120 80 C104 80 90 84 78 92 Z" fill="#b9cdf2"/>' +
+  '<circle cx="100" cy="62" r="7" fill="#a3b8e6"/><circle cx="120" cy="54" r="8" fill="#a3b8e6"/><circle cx="140" cy="62" r="7" fill="#a3b8e6"/>' +
+  '<circle cx="88" cy="80" r="5.5" fill="#a3b8e6"/><circle cx="152" cy="80" r="5.5" fill="#a3b8e6"/>' +
+  '<ellipse cx="120" cy="96" rx="42" ry="34" fill="#9db4e2"/>' +
+  '<ellipse cx="120" cy="110" rx="26" ry="16" fill="#d5e2f8"/>' +
+  '<circle cx="110" cy="104" r="2.3" fill="#5f78ad"/><circle cx="130" cy="104" r="2.3" fill="#5f78ad"/>' +
+  smile(120, 110, 10, '#50689b') +
+  eyes(100, 140, 92, 12.5, 7.2) +
+  blush(82, 158, 104, 9) +
+  '</svg>';
+
+/* 11. 플레시오사우루스 */
+ART.plesiosaurus = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="아기 플레시오사우루스">' +
+  '<path d="M8 200 C36 186 58 208 86 200 C114 192 134 212 162 202 C190 192 210 208 232 198 L232 232 L8 232 Z" fill="#bfe6ff" opacity=".9"/>' +
+  '<path d="M8 208 C36 196 58 216 86 208 C114 200 134 218 162 210 C190 202 210 216 232 208" fill="none" stroke="#8ecdff" stroke-width="3" opacity=".8"/>' +
+  '<path d="M96 172 C78 180 60 190 58 200 C70 204 88 198 100 186 Z" fill="#5b8ce0"/>' +
+  '<path d="M144 172 C162 180 180 190 182 200 C170 204 152 198 140 186 Z" fill="#5b8ce0"/>' +
+  '<ellipse cx="120" cy="174" rx="34" ry="24" fill="#7ba6f5"/>' +
+  '<ellipse cx="120" cy="180" rx="19" ry="14" fill="#d3e3ff"/>' +
+  '<path d="M108 160 C98 136 94 112 100 92 C106 70 126 64 140 74 C152 84 152 102 146 118 C140 138 138 152 140 162 Z" fill="#7ba6f5"/>' +
+  '<ellipse cx="122" cy="72" rx="38" ry="33" fill="#8fb6f8"/>' +
+  '<ellipse cx="124" cy="84" rx="24" ry="15" fill="#cfe0ff"/>' +
+  '<circle cx="114" cy="79" r="2.3" fill="#4a76c7"/><circle cx="134" cy="79" r="2.3" fill="#4a76c7"/>' +
+  smile(124, 84, 10, '#3f68b8') +
+  eyes(104, 144, 64, 12, 7) +
+  blush(88, 160, 82, 8.5) +
+  '<path d="M104 102 l-9 -5 4 10 Z" fill="#5b8ce0"/><path d="M102 120 l-8 -4 4 9 Z" fill="#5b8ce0"/>' +
+  '<circle cx="182" cy="132" r="8" fill="#ffffff" opacity=".6"/><circle cx="196" cy="108" r="5" fill="#ffffff" opacity=".5"/><circle cx="170" cy="106" r="3.5" fill="#ffffff" opacity=".45"/>' +
+  '</svg>';
+
+/* 12. 황금 티라노 (전설) */
+ART.goldtrex = '<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="전설의 황금 티라노사우루스">' +
+  '<defs>' +
+  '<linearGradient id="gtBody" x1="0" y1="0" x2="0.2" y2="1">' +
+  '<stop offset="0" stop-color="#fff2c4"/><stop offset=".45" stop-color="#ffd76a"/><stop offset="1" stop-color="#e0a520"/>' +
+  '</linearGradient>' +
+  '<linearGradient id="gtDark" x1="0" y1="0" x2="0" y2="1">' +
+  '<stop offset="0" stop-color="#f5c040"/><stop offset="1" stop-color="#c98a00"/>' +
+  '</linearGradient>' +
+  '<radialGradient id="gtHalo" cx="50%" cy="50%" r="50%">' +
+  '<stop offset="0" stop-color="#fff6cc" stop-opacity=".9"/><stop offset="1" stop-color="#fff6cc" stop-opacity="0"/>' +
+  '</radialGradient>' +
+  '</defs>' +
+  '<circle cx="120" cy="120" r="104" fill="url(#gtHalo)"/>' +
+  shadow(58) +
+  '<path d="M86 184 C62 196 38 192 24 174 C30 168 38 170 42 174 C52 184 68 182 88 172 Z" fill="url(#gtDark)"/>' +
+  '<path d="M98 176 C92 190 92 200 98 208 H124 C115 198 113 188 116 176 Z" fill="url(#gtDark)"/>' +
+  '<path d="M132 176 C130 188 132 198 138 208 H164 C154 198 152 188 154 176 Z" fill="url(#gtDark)"/>' +
+  '<ellipse cx="108" cy="208" rx="11" ry="5" fill="#b57d00"/><ellipse cx="148" cy="208" rx="11" ry="5" fill="#b57d00"/>' +
+  '<ellipse cx="120" cy="154" rx="46" ry="39" fill="url(#gtBody)"/>' +
+  '<ellipse cx="120" cy="168" rx="27" ry="23" fill="#fffaf0" opacity=".85"/>' +
+  '<path d="M82 146 C75 151 72 158 75 165" stroke="#f0b62e" stroke-width="12" stroke-linecap="round" fill="none"/>' +
+  '<path d="M158 146 C165 151 168 158 165 165" stroke="#f0b62e" stroke-width="12" stroke-linecap="round" fill="none"/>' +
+  '<path d="M92 46 l7 -14 9 13 Z" fill="#e8b53c"/><path d="M112 41 l7 -15 9 14 Z" fill="#e8b53c"/><path d="M132 46 l7 -13 8 12 Z" fill="#e8b53c"/>' +
+  /* 왕관 */
+  '<path d="M92 42 L100 22 L110 36 L120 16 L130 36 L140 22 L148 42 Z" fill="#fff3c9" stroke="#e0a520" stroke-width="2.4" stroke-linejoin="round"/>' +
+  '<circle cx="120" cy="32" r="3.4" fill="#ff7d6b"/><circle cx="102" cy="32" r="2.8" fill="#5ab6ff"/><circle cx="138" cy="32" r="2.8" fill="#5ab6ff"/>' +
+  '<ellipse cx="120" cy="88" rx="51" ry="46" fill="url(#gtBody)"/>' +
+  '<ellipse cx="120" cy="106" rx="33" ry="21" fill="#fff3c9"/>' +
+  '<circle cx="108" cy="98" r="2.7" fill="#c98a00"/><circle cx="132" cy="98" r="2.7" fill="#c98a00"/>' +
+  smile(120, 107, 13, '#a97400') +
+  '<path d="M112 110 l3.6 5 3.6 -5 Z" fill="#ffffff"/><path d="M124 110 l3.6 5 3.6 -5 Z" fill="#ffffff"/>' +
+  eyes(100, 140, 84, 13, 7.4) +
+  blush(80, 160, 98, 10) +
+  star(26, 70, 9, '#ffe38a', .95) + star(212, 96, 7, '#ffe38a', .9) + star(206, 168, 5.5, '#fff3c9', .85) + star(34, 150, 5, '#fff3c9', .8) +
+  '</svg>';
+
+/* ================= 진우의 공룡 등원 대시보드 ================= */
+(function(){
+'use strict';
+
+/* ---------- 작은 도우미 ---------- */
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var pad = function(n){ return (n < 10 ? '0' : '') + n; };
+var WEEK = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
+}
+function todayKey(d){
+  d = d || new Date();
+  return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+}
+function normHM(t){
+  var m = String(t || '').match(/(\d{1,2})\s*[:.]\s*(\d{2})/);
+  if (!m) return '';
+  var h = Math.min(23, parseInt(m[1], 10)), mi = Math.min(59, parseInt(m[2], 10));
+  return pad(h) + ':' + pad(mi);
+}
+
+/* ---------- 공룡 데이터 ---------- */
+var RARITY = {
+  common: { label: '일반' },
+  rare:   { label: '희귀' },
+  legend: { label: '전설' }
+};
+var DINOS = [
+  { id:'trex', name:'티라노사우루스', en:'Tyrannosaurus', rarity:'common', art:ART.trex,
+    desc:'이빨은 크지만 마음은 아주 다정해요. 진우가 제일 먼저 만나는 친구!' },
+  { id:'triceratops', name:'트리케라톱스', en:'Triceratops', rarity:'common', art:ART.triceratops,
+    desc:'세 개의 뿔로 나뭇잎을 사각사각 찢어 먹어요. 힘이 아주 세요!' },
+  { id:'brachiosaurus', name:'브라키오사우루스', en:'Brachiosaurus', rarity:'common', art:ART.brachiosaurus,
+    desc:'목이 아주 길어서 구름 냄새도 맡을 수 있어요. 하늘과 제일 친해요.' },
+  { id:'stegosaurus', name:'스테고사우루스', en:'Stegosaurus', rarity:'common', art:ART.stegosaurus,
+    desc:'등에 달린 판판은 햇볕을 모으는 태양열 담요예요. 따뜻해져요!' },
+  { id:'pteranodon', name:'프테라노돈', en:'Pteranodon', rarity:'common', art:ART.pteranodon,
+    desc:'하늘을 나는 공룡이에요. 바람 타기를 제일 좋아해요.' },
+  { id:'ankylosaurus', name:'안킬로사우루스', en:'Ankylosaurus', rarity:'common', art:ART.ankylosaurus,
+    desc:'꼬리 망치로 딱! 하지만 거북이처럼 느긋하고 순한 친구예요.' },
+  { id:'velociraptor', name:'벨로시랩터', en:'Velociraptor', rarity:'rare', art:ART.velociraptor,
+    desc:'다리 힘이 아주 세서 달리기 선수! 머리에 깃털도 있어요.' },
+  { id:'spinosaurus', name:'스피노사우루스', en:'Spinosaurus', rarity:'rare', art:ART.spinosaurus,
+    desc:'등의 커다란 돛으로 햇볕을 모아요. 물고기를 좋아하는 낚시꾼!' },
+  { id:'parasaurolophus', name:'파라사우롤로푸스', en:'Parasaurolophus', rarity:'rare', art:ART.parasaurolophus,
+    desc:'머리 관으로 나팔 소리를 내요. 뿌우~ 멀리까지 들려요.' },
+  { id:'pachycephalosaurus', name:'파키케팔로사우루스', en:'Pachycephalosaurus', rarity:'rare', art:ART.pachycephalosaurus,
+    desc:'돌처럼 단단한 이마로 콩! 친구를 지켜 주는 용감이예요.' },
+  { id:'plesiosaurus', name:'플레시오사우루스', en:'Plesiosaurus', rarity:'legend', art:ART.plesiosaurus,
+    desc:'바다를 헤엄치는 신비한 친구. 물속에서도 숨을 쉴 수 있어요.' },
+  { id:'goldtrex', name:'황금 티라노', en:'Golden Tyrannosaurus', rarity:'legend', art:ART.goldtrex,
+    desc:'08:45 전에 미션을 모두 끝낸 진우에게만 나타나는 전설의 공룡 왕!' }
+];
+var DINO_BY_ID = {};
+DINOS.forEach(function(d){ DINO_BY_ID[d.id] = d; });
+
+var DEFAULT_ROUTINE = [
+  { id:'r1', time:'07:10', label:'양치 · 세수', icon:'🪥' },
+  { id:'r2', time:'~07:30', label:'옷 갈아입기', icon:'👕' },
+  { id:'r3', time:'', label:'아침 식사', icon:'🍚' },
+  { id:'r4', time:'', label:'필사', icon:'✍️' },
+  { id:'r5', time:'', label:'토도패드 학습', icon:'📱' },
+  { id:'r6', time:'08:35', label:'가글 · 가방 챙기기 · 겉옷 입기', icon:'🎒' }
+];
+
+var STORE_KEY = 'jinwoo-dino-dash-v1';
+
+/* ---------- 저장 ---------- */
+function defaultSettings(){
+  return {
+    mode: 'motivate',
+    target: '08:45',
+    muted: false,
+    routine: DEFAULT_ROUTINE.map(function(r){ return { id:r.id, time:r.time, label:r.label, icon:r.icon }; })
+  };
+}
+function freshToday(){ return { date: todayKey(), checks:{}, hatched:null, failed:false }; }
+function defaultState(){ return { v:1, settings: defaultSettings(), today: freshToday(), dex:{} }; }
+
+function loadState(){
+  var d = defaultState();
+  try {
+    var raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return d;
+    var s = JSON.parse(raw);
+    if (!s || typeof s !== 'object') return d;
+    if (s.settings && typeof s.settings === 'object'){
+      if (s.settings.mode === 'strict' || s.settings.mode === 'motivate') d.settings.mode = s.settings.mode;
+      var tg = normHM(s.settings.target);
+      if (tg) d.settings.target = tg;
+      d.settings.muted = !!s.settings.muted;
+      if (Array.isArray(s.settings.routine) && s.settings.routine.length){
+        var seen = {};
+        var list = s.settings.routine.filter(function(x){ return x && typeof x.label === 'string'; }).map(function(x, i){
+          var id = String(x.id || ('r' + (i + 1)));
+          while (seen[id]) id = id + 'x';
+          seen[id] = 1;
+          return { id:id, time:String(x.time || '').slice(0, 12), label:String(x.label).slice(0, 60), icon:String(x.icon || '⭐').slice(0, 4) };
+        });
+        if (list.length) d.settings.routine = list;
+      }
+    }
+    if (s.dex && typeof s.dex === 'object'){
+      Object.keys(s.dex).forEach(function(k){
+        var e = s.dex[k];
+        if (DINO_BY_ID[k] && e && typeof e === 'object'){
+          d.dex[k] = {
+            count: Math.max(1, parseInt(e.count, 10) || 1),
+            first: /^\d{4}-\d{2}-\d{2}$/.test(e.first || '') ? e.first : todayKey()
+          };
+        }
+      });
+    }
+    if (s.today && s.today.date === todayKey()){
+      d.today.checks = (s.today.checks && typeof s.today.checks === 'object') ? s.today.checks : {};
+      var h = s.today.hatched;
+      if (h && DINO_BY_ID[h.id]) d.today.hatched = { id:h.id, at:+h.at || Date.now(), onTime: !!h.onTime };
+      d.today.failed = !!s.today.failed;
+      if (typeof s.today.onTime === 'boolean') d.today.onTime = s.today.onTime;
+      if (s.today.completeAt) d.today.completeAt = +s.today.completeAt || null;
+    }
+  } catch (e) {}
+  return d;
+}
+function save(){
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) {}
+}
+
+var S = loadState();
+
+/* ---------- 사운드 (Web Audio) ---------- */
+var actx = null;
+function audioCtx(){
+  if (S.settings.muted) return null;
+  try {
+    if (!actx){
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      actx = new AC();
+    }
+    if (actx.state === 'suspended') actx.resume();
+    return actx;
+  } catch (e) { return null; }
+}
+function beep(freq, dur, type, vol, delay, slideTo){
+  var c = audioCtx(); if (!c) return;
+  try {
+    var t = c.currentTime + (delay || 0);
+    var o = c.createOscillator(), g = c.createGain();
+    o.type = type || 'sine';
+    o.frequency.setValueAtTime(freq, t);
+    if (slideTo) o.frequency.exponentialRampToValueAtTime(Math.max(40, slideTo), t + dur);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(vol == null ? 0.15 : vol, t + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(c.destination);
+    o.start(t); o.stop(t + dur + 0.03);
+  } catch (e) {}
+}
+function noise(dur, vol, freq){
+  var c = audioCtx(); if (!c) return;
+  try {
+    var n = Math.floor(c.sampleRate * dur);
+    var buf = c.createBuffer(1, n, c.sampleRate);
+    var data = buf.getChannelData(0);
+    for (var i = 0; i < n; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / n);
+    var src = c.createBufferSource(); src.buffer = buf;
+    var f = c.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = freq || 1600; f.Q.value = 0.9;
+    var g = c.createGain(); g.gain.value = vol == null ? 0.2 : vol;
+    src.connect(f); f.connect(g); g.connect(c.destination);
+    src.start();
+  } catch (e) {}
+}
+var sfx = {
+  tap:      function(){ beep(880, 0.05, 'sine', 0.05); },
+  check:    function(){ beep(760, 0.1, 'triangle', 0.16); beep(1140, 0.13, 'triangle', 0.13, 0.08, 1240); },
+  uncheck:  function(){ beep(520, 0.12, 'sine', 0.12, 0, 360); },
+  thump:    function(){ beep(150, 0.15, 'sine', 0.3, 0, 62); noise(0.06, 0.1, 900); },
+  crack:    function(){ noise(0.24, 0.22, 2400); beep(210, 0.22, 'sawtooth', 0.07, 0, 80); },
+  hatch:    function(){ [523, 659, 784, 1047].forEach(function(f, i){ beep(f, 0.26, 'triangle', 0.14, i * 0.09); }); noise(0.35, 0.05, 5200); },
+  complete: function(){ [659, 784, 988].forEach(function(f, i){ beep(f, 0.2, 'triangle', 0.12, i * 0.1); }); },
+  fail:     function(){ beep(392, 0.26, 'triangle', 0.13); beep(294, 0.34, 'triangle', 0.13, 0.22, 240); },
+  pop:      function(){ beep(1200, 0.07, 'square', 0.05, 0, 1500); }
+};
+
+/* ---------- 화면 요소 ---------- */
+var el = {};
+function cacheEls(){
+  ['clockTime','todayLabel','greetText','countdownBox','cdValue','cdSub','targetLabel','nextPill','nextHint',
+   'track','trackFill','trackSteps','trackRunner','routineList','doneCount','totalCount','routineFoot',
+   'dexGrid','dexOwned','dexBadge','dexRing','hatchOverlay','hatchStage','hatchClose','eggWrap','eggBtn',
+   'eggSvg','hatchHint','hatchTitle','eggTag','hatchDots','revealBox','dinoPop','revealCard','rcRarity',
+   'rcName','rcEn','rcDesc','rcMeta','rcDexBtn','rcClose','failOverlay','failEgg','failSettings','failClose',
+   'settingsOverlay','settingsClose','modeSeg','modeHelp','targetInput','routineEdit','routineBadge',
+   'addRoutineBtn','resetTodayBtn','previewBtn','dexCode','exportBtn','importBtn','confirmOverlay',
+   'confirmTitle','confirmMsg','confirmNo','confirmYes','toast','confetti','brandBtn','brandSub',
+   'soundBtn','settingsBtn','tabMission','tabDex','view-mission','view-dex'
+  ].forEach(function(id){ el[id] = document.getElementById(id); });
+}
+
+/* ---------- 진행/루틴 ---------- */
+function itemById(id){
+  for (var i = 0; i < S.settings.routine.length; i++) if (S.settings.routine[i].id === id) return S.settings.routine[i];
+  return null;
+}
+function doneCount(){
+  var n = 0;
+  S.settings.routine.forEach(function(it){ if (S.today.checks[it.id]) n++; });
+  return n;
+}
+function itemDateTime(str){
+  var hm = normHM(str);
+  if (!hm) return null;
+  var p = hm.split(':');
+  var d = new Date();
+  d.setHours(parseInt(p[0], 10), parseInt(p[1], 10), 0, 0);
+  return d;
+}
+function targetDate(){
+  var p = (normHM(S.settings.target) || '08:45').split(':');
+  var d = new Date();
+  d.setHours(parseInt(p[0], 10), parseInt(p[1], 10), 0, 0);
+  return d;
+}
+
+function renderRoutine(){
+  var list = el.routineList;
+  list.innerHTML = '';
+  S.settings.routine.forEach(function(item){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mission';
+    b.setAttribute('data-id', item.id);
+    b.setAttribute('aria-pressed', 'false');
+    b.innerHTML =
+      '<span class="m-icon" aria-hidden="true">' + esc(item.icon || '⭐') + '</span>' +
+      '<span class="m-body">' +
+        (item.time ? '<span class="m-time">' + esc(item.time) + '</span>' : '') +
+        '<span class="m-label">' + esc(item.label) + '</span>' +
+      '</span>' +
+      '<span class="m-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 L9.6 17.2 L19 7" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>' +
+      '<span class="m-badge">다음</span>';
+    b.addEventListener('click', function(){ toggleItem(item.id, b); });
+    list.appendChild(b);
+  });
+  el.totalCount.textContent = S.settings.routine.length;
+  renderSteps();
+  updateRoutine();
+}
+
+function renderSteps(){
+  var n = S.settings.routine.length;
+  var box = el.trackSteps;
+  box.innerHTML = '';
+  for (var i = 0; i < n; i++){
+    var s = document.createElement('span');
+    s.className = 'track-step';
+    s.textContent = i === n - 1 ? '🐾' : '👣';
+    s.style.left = (n <= 1 ? 0 : (i / (n - 1)) * 100) + '%';
+    box.appendChild(s);
+  }
+}
+
+function updateRoutine(){
+  var now = new Date();
+  var nextFound = false;
+  var items = $$('.mission');
+  items.forEach(function(node){
+    var id = node.getAttribute('data-id');
+    var done = !!S.today.checks[id];
+    node.classList.toggle('done', done);
+    node.setAttribute('aria-pressed', done ? 'true' : 'false');
+    var isNext = !done && !nextFound;
+    if (isNext) nextFound = true;
+    node.classList.toggle('next', isNext);
+    var it = itemById(id);
+    var t = it ? itemDateTime(it.time) : null;
+    var overdue = !!(isNext && t && now.getTime() > t.getTime() + 60000);
+    node.classList.toggle('overdue', overdue);
+    var badge = node.querySelector('.m-badge');
+    if (badge) badge.textContent = overdue ? '지금!' : '다음';
+  });
+  var total = S.settings.routine.length, done = doneCount();
+  el.doneCount.textContent = done;
+  updateProgress(done, total);
+  updateNextHint();
+  updateFoot(done, total);
+}
+
+function updateProgress(done, total){
+  var pct = total ? Math.round((done / total) * 100) : 0;
+  el.track.style.setProperty('--p', pct + '%');
+  el.track.style.setProperty('--pf', String(pct / 100));
+  el.trackFill.style.width = pct + '%';
+  el.trackRunner.textContent = done >= total && total > 0 ? '🦖' : '🥚';
+  var steps = $$('.track-step');
+  steps.forEach(function(s, i){
+    var need = total ? (i + 1) / total : 1;
+    s.classList.toggle('on', done / Math.max(1, total) >= need - 0.001 && done > 0);
+  });
+}
+
+function updateNextHint(){
+  var next = null;
+  S.settings.routine.forEach(function(it){ if (!next && !S.today.checks[it.id]) next = it; });
+  if (!next){
+    el.nextPill.className = 'pill ok';
+    el.nextPill.textContent = '모든 미션 완료! 알을 확인해 보세요 🥚';
+  } else {
+    el.nextPill.className = 'pill';
+    el.nextPill.textContent = '다음 미션 · ' + next.label + (next.time ? ' (' + next.time + ')' : '');
+  }
+}
+
+function updateFoot(done, total){
+  var foot = el.routineFoot;
+  foot.innerHTML = '';
+  if (S.today.hatched && DINO_BY_ID[S.today.hatched.id]){
+    var d = DINO_BY_ID[S.today.hatched.id];
+    foot.innerHTML = '<span class="foot-dino">' + d.art + '</span><span>오늘의 친구 · <b>' + esc(d.name) + '</b></span>' +
+      '<button class="btn ghost small" type="button">다시 보기</button>';
+    foot.querySelector('button').addEventListener('click', function(){ openDinoCard(d); });
+    return;
+  }
+  if (S.today.failed){
+    foot.innerHTML = '<span>오늘은 알이 부화하지 못했어요. 내일 다시 도전! 💪</span>';
+    return;
+  }
+  if (total > 0 && done >= total){
+    foot.innerHTML = '<span>모든 미션 완료! 알이 기다리고 있어요 🥚</span>' +
+      '<button class="btn amber small" type="button">알 보기</button>';
+    foot.querySelector('button').addEventListener('click', function(){
+      var ot = (typeof S.today.onTime === 'boolean') ? S.today.onTime : (new Date().getTime() <= targetDate().getTime());
+      openHatch(ot, false);
+    });
+    return;
+  }
+  foot.innerHTML = '<span>' + (done > 0 ? done + '개 완료! ' : '') + total + '개를 모두 체크하면 공룡 알이 나타나요 🥚</span>';
+}
+
+function toggleItem(id, node){
+  var total = S.settings.routine.length;
+  var wasAll = total > 0 && doneCount() >= total;
+  if (S.today.checks[id]){
+    delete S.today.checks[id];
+    sfx.uncheck();
+  } else {
+    S.today.checks[id] = true;
+    sfx.check();
+    node.classList.add('just-done');
+    setTimeout(function(){ node.classList.remove('just-done'); }, 620);
+  }
+  save();
+  updateRoutine();
+  var nowAll = total > 0 && doneCount() >= total;
+  if (nowAll && !wasAll) onAllDone();
+}
+
+/* ---------- 시계 ---------- */
+function renderClock(){
+  var now = new Date();
+  el.clockTime.innerHTML = pad(now.getHours()) + ':' + pad(now.getMinutes()) + '<span class="sec">:' + pad(now.getSeconds()) + '</span>';
+  el.todayLabel.textContent = (now.getMonth() + 1) + '월 ' + now.getDate() + '일 ' + WEEK[now.getDay()];
+  var h = now.getHours();
+  el.greetText.textContent = h < 9 ? '좋은 아침이에요, 진우!' : (h < 12 ? '오전도 신나게, 진우!' : '오늘도 화이팅, 진우!');
+
+  var t = targetDate();
+  var diff = t.getTime() - now.getTime();
+  var total = S.settings.routine.length, done = doneCount();
+  var allDone = total > 0 && done >= total;
+  el.targetLabel.textContent = normHM(S.settings.target) || '08:45';
+  el.countdownBox.classList.remove('urgent', 'go', 'done');
+
+  if (diff > 0){
+    var mins = Math.floor(diff / 60000), secs = Math.floor((diff % 60000) / 1000);
+    var hh = Math.floor(mins / 60), mm = mins % 60;
+    el.cdValue.innerHTML = (hh > 0 ? hh + '<span class="unit">시간 </span>' : '') +
+      mm + '<span class="unit">분 </span>' + secs + '<span class="unit">초</span>';
+    el.cdSub.textContent = allDone ? '모두 끝났어요! 지금 출발해도 좋아요 🎉' : '남았어요!';
+    if (diff <= 5 * 60000) el.countdownBox.classList.add('urgent');
+  } else {
+    var past = Math.floor(-diff / 60000);
+    el.cdValue.innerHTML = '지금 바로 출발!';
+    el.cdSub.textContent = past < 1 ? '출발 시각이에요. 가방 챙기고 출발!' :
+      '출발 시각에서 ' + (past >= 60 ? Math.floor(past / 60) + '시간 ' + (past % 60) + '분' : past + '분') + ' 지났어요';
+    el.countdownBox.classList.add('go');
+    if (allDone) el.countdownBox.classList.add('done');
+  }
+}
+
+/* ---------- 날짜 바뀜 ---------- */
+function checkDayChange(){
+  if (S.today.date !== todayKey()){
+    S.today = freshToday();
+    save();
+    renderRoutine();
+    renderDex();
+    toast('좋은 아침! 체크리스트를 새로 시작해요 🌞');
+  }
+}
+
+/* ---------- 도감 ---------- */
+function dexOwnedCount(){
+  var n = 0;
+  DINOS.forEach(function(d){ if (S.dex[d.id]) n++; });
+  return n;
+}
+function renderDex(){
+  var grid = el.dexGrid;
+  grid.innerHTML = '';
+  var owned = 0;
+  DINOS.forEach(function(d, i){
+    var info = S.dex[d.id];
+    if (info) owned++;
+    var card = document.createElement('div');
+    card.className = 'dex-card ' + (info ? 'owned' : 'unknown') + ' rarity-' + d.rarity;
+    card.style.animationDelay = Math.min(i * 25, 300) + 'ms';
+    var head = info ? '<span class="rarity-chip ' + d.rarity + '">' + RARITY[d.rarity].label + '</span>' +
+                      '<span class="count-chip">×' + info.count + '</span>' : '';
+    var sub = info ? ('처음 만난 날 ' + (parseInt(info.first.slice(5, 7), 10)) + '월 ' + (parseInt(info.first.slice(8, 10), 10)) + '일')
+                   : '아직 만나지 못했어요';
+    card.innerHTML = head + '<div class="dex-art">' + d.art + '</div>' +
+      '<div class="dex-name">' + (info ? esc(d.name) : '???') + '</div>' +
+      '<div class="dex-sub">' + sub + '</div>';
+    if (info){
+      card.addEventListener('click', function(){ openDinoCard(d); });
+    }
+    grid.appendChild(card);
+  });
+  el.dexOwned.textContent = owned;
+  el.dexBadge.textContent = owned + '/' + DINOS.length;
+  var C = 2 * Math.PI * 25;
+  el.dexRing.style.strokeDasharray = C.toFixed(2);
+  el.dexRing.style.strokeDashoffset = (C * (1 - owned / DINOS.length)).toFixed(2);
+}
+
+/* ---------- 알 ---------- */
+function eggMarkup(gold){
+  var gid = gold ? 'egGold' : 'egCream';
+  var shell = 'M100 12 C141 12 167 74 167 128 C167 179 137 210 100 210 C63 210 33 179 33 128 C33 74 59 12 100 12 Z';
+  var c = gold
+    ? { a:'#fffceb', b:'#ffe6a0', c:'#e8ab21', rim:'#d99a12', spot:'#c98a00', crack:'#8a5c00', shade:'#b87c00' }
+    : { a:'#fffefa', b:'#faeed6', c:'#e3c99b', rim:'#d6bc8d', spot:'#dcc49a', crack:'#7a6034', shade:'#bfa272' };
+  return '<defs>' +
+      '<radialGradient id="' + gid + '" cx="34%" cy="24%" r="86%">' +
+        '<stop offset="0" stop-color="' + c.a + '"/><stop offset=".5" stop-color="' + c.b + '"/><stop offset="1" stop-color="' + c.c + '"/>' +
+      '</radialGradient>' +
+      '<radialGradient id="' + gid + 'Sh" cx="50%" cy="50%" r="50%">' +
+        '<stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>' +
+      '</radialGradient>' +
+      '<linearGradient id="' + gid + 'Fade" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset=".55" stop-color="' + c.shade + '" stop-opacity="0"/>' +
+        '<stop offset="1" stop-color="' + c.shade + '" stop-opacity=".26"/>' +
+      '</linearGradient>' +
+      '<clipPath id="' + gid + 'Clip"><path d="' + shell + '"/></clipPath>' +
+    '</defs>' +
+    '<ellipse cx="100" cy="224" rx="56" ry="9" fill="#0f2033" opacity=".22"/>' +
+    '<path d="' + shell + '" fill="url(#' + gid + ')" stroke="' + c.rim + '" stroke-width="2.5" stroke-linejoin="round"/>' +
+    '<g clip-path="url(#' + gid + 'Clip)">' +
+      '<ellipse cx="72" cy="64" rx="30" ry="44" fill="url(#' + gid + 'Sh)" opacity=".9" transform="rotate(-16 72 64)"/>' +
+      '<rect x="0" y="0" width="200" height="240" fill="url(#' + gid + 'Fade)"/>' +
+      '<circle cx="66" cy="122" r="10" fill="' + c.spot + '" opacity=".4"/>' +
+      '<circle cx="130" cy="96" r="7" fill="' + c.spot + '" opacity=".35"/>' +
+      '<circle cx="118" cy="170" r="11" fill="' + c.spot + '" opacity=".32"/>' +
+      '<circle cx="78" cy="176" r="6.5" fill="' + c.spot + '" opacity=".3"/>' +
+      '<circle cx="142" cy="146" r="5" fill="' + c.spot + '" opacity=".3"/>' +
+    '</g>' +
+    (gold ? star(100, 50, 9, '#ffffff', .95) + star(146, 176, 6, '#ffffff', .8) + star(52, 174, 5, '#ffffff', .7) : '') +
+    '<g fill="none" stroke="' + c.crack + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path class="crack crack-1" d="M100 36 L90 60 L104 78 L94 98"/>' +
+      '<path class="crack crack-2" d="M104 78 L126 92 L117 114 L140 126"/>' +
+      '<path class="crack crack-3" d="M90 60 L64 74 M117 114 L93 128 M140 126 L153 144"/>' +
+    '</g>';
+}
+
+var hatch = { active:false, onTime:true, test:false, taps:0, dino:null, saved:false, breaking:false };
+
+function pickDino(onTime){
+  var w = onTime ? { legend: 30, rare: 50, common: 20 } : { legend: 6, rare: 26, common: 68 };
+  var r = Math.random() * 100, rarity = 'common';
+  if (r < w.legend) rarity = 'legend';
+  else if (r < w.legend + w.rare) rarity = 'rare';
+  var pool = DINOS.filter(function(d){ return d.rarity === rarity; });
+  if (!pool.length) pool = DINOS;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function setDots(n){
+  var dots = el.hatchDots.querySelectorAll('.dot');
+  Array.prototype.forEach.call(dots, function(d, i){ d.classList.toggle('on', i < n); });
+}
+
+function openHatch(onTime, isTest){
+  hatch = { active:true, onTime:!!onTime, test:!!isTest, taps:0, dino:null, saved:false, breaking:false };
+  el.hatchStage.classList.remove('revealed');
+  el.hatchClose.classList.add('hidden');
+  el.eggWrap.className = 'egg-wrap' + (onTime ? ' gold' : '');
+  el.eggSvg.innerHTML = eggMarkup(!!onTime);
+  el.eggSvg.setAttribute('data-stage', '0');
+  setDots(0);
+  el.eggTag.className = 'egg-tag' + (onTime ? ' gold' : '');
+  el.eggTag.textContent = isTest ? '부화 미리보기' : (onTime ? '✨ 황금알' : '공룡 알');
+  el.hatchTitle.textContent = '알을 톡톡 두드려 보세요!';
+  el.hatchOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function tapEgg(){
+  if (!hatch.active || hatch.breaking) return;
+  hatch.taps++;
+  el.eggSvg.setAttribute('data-stage', String(Math.min(3, hatch.taps)));
+  el.eggWrap.classList.remove('tap1', 'tap2');
+  void el.eggWrap.offsetWidth;
+  if (hatch.taps < 3) el.eggWrap.classList.add('tap' + hatch.taps);
+  setDots(hatch.taps);
+  if (hatch.taps >= 3){
+    breakEgg();
+  } else {
+    sfx.thump();
+  }
+}
+
+function breakEgg(){
+  hatch.breaking = true;
+  el.eggWrap.classList.add('glow', 'breaking');
+  sfx.crack();
+  setTimeout(function(){ sfx.hatch(); }, 170);
+  var n = 8;
+  for (var i = 0; i < n; i++){
+    (function(){
+      var shard = document.createElement('div');
+      shard.className = 'shard';
+      var sz = 18 + Math.random() * 22;
+      shard.style.width = sz + 'px';
+      shard.style.height = (sz * 1.1) + 'px';
+      shard.style.left = '50%';
+      shard.style.top = '55%';
+      shard.style.marginLeft = (-sz / 2) + 'px';
+      if (hatch.onTime){
+        shard.style.background = 'linear-gradient(150deg,#fffbe6,#f0c24a)';
+        shard.style.boxShadow = 'inset -3px -4px 0 rgba(190,140,20,.3)';
+      }
+      el.eggWrap.appendChild(shard);
+      var ang = (Math.PI * 2 * i / n) + Math.random() * 0.6;
+      var dist = 80 + Math.random() * 110;
+      var dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist + 40;
+      if (shard.animate){
+        shard.animate([
+          { transform:'translate(0,0) rotate(0deg) scale(1)', opacity:1 },
+          { transform:'translate(' + dx.toFixed(0) + 'px,' + dy.toFixed(0) + 'px) rotate(' + (Math.random() * 520 - 260).toFixed(0) + 'deg) scale(.85)', opacity:0 }
+        ], { duration: 700 + Math.random() * 350, easing:'cubic-bezier(.15,.75,.3,1)', fill:'forwards' });
+      }
+      setTimeout(function(){ if (shard.parentNode) shard.parentNode.removeChild(shard); }, 1200);
+    })();
+  }
+  setTimeout(showReveal, 430);
+}
+
+function dexMetaFor(d, isNew){
+  var info = S.dex[d.id];
+  var count = info ? info.count : 1;
+  var first = info ? info.first : todayKey();
+  var parts = [];
+  parts.push(count > 1 ? '벌써 ' + count + '번째 만났어요!' : '도감 ' + dexOwnedCount() + '번째 친구');
+  parts.push('처음 만난 날 ' + parseInt(first.slice(5, 7), 10) + '월 ' + parseInt(first.slice(8, 10), 10) + '일');
+  return parts.join(' · ');
+}
+
+function fillReveal(d, isTest, fromDex){
+  el.dinoPop.innerHTML = d.art;
+  el.dinoPop.classList.remove('pop');
+  void el.dinoPop.offsetWidth;
+  el.dinoPop.classList.add('pop');
+  el.revealCard.classList.toggle('gold', d.rarity === 'legend');
+  el.rcRarity.className = 'rc-rarity ' + d.rarity;
+  el.rcRarity.textContent = RARITY[d.rarity].label + (d.rarity === 'legend' ? ' ⭐' : '');
+  el.rcName.textContent = d.name;
+  el.rcEn.textContent = d.en;
+  el.rcDesc.textContent = d.desc;
+  if (fromDex){
+    el.rcMeta.textContent = dexMetaFor(d, false);
+  } else if (isTest){
+    el.rcMeta.textContent = '부화 미리보기예요 · 도감에는 저장하지 않았어요';
+  } else {
+    el.rcMeta.textContent = dexMetaFor(d, true);
+  }
+}
+
+function showReveal(){
+  var d = hatch.dino || (hatch.dino = pickDino(hatch.onTime));
+  el.hatchStage.classList.add('revealed');
+  if (!hatch.test && !hatch.saved){
+    hatch.saved = true;
+    var prev = S.dex[d.id];
+    S.dex[d.id] = { count: (prev ? prev.count : 0) + 1, first: prev ? prev.first : todayKey() };
+    S.today.hatched = { id: d.id, at: Date.now(), onTime: hatch.onTime };
+    S.today.failed = false;
+    save();
+    renderDex();
+  }
+  fillReveal(d, hatch.test, false);
+  el.hatchClose.classList.remove('hidden');
+  el.hatchClose.setAttribute('aria-label', '닫기');
+  confettiBurst(d.rarity);
+  updateFoot(doneCount(), S.settings.routine.length);
+}
+
+function openDinoCard(d){
+  hatch = { active:true, onTime:true, test:true, taps:0, dino:d, saved:true, breaking:false };
+  el.eggWrap.classList.remove('breaking');
+  el.hatchStage.classList.add('revealed');
+  el.hatchClose.classList.remove('hidden');
+  el.hatchOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  fillReveal(d, true, true);
+  el.dinoPop.classList.remove('pop');
+  void el.dinoPop.offsetWidth;
+  el.dinoPop.classList.add('pop');
+}
+
+function closeHatch(){
+  if (hatch.breaking && !el.hatchStage.classList.contains('revealed')) return;
+  el.hatchOverlay.classList.remove('show');
+  el.eggWrap.classList.remove('breaking', 'glow', 'gold', 'tap1', 'tap2');
+  el.hatchStage.classList.remove('revealed');
+  document.body.style.overflow = '';
+  hatch.active = false;
+}
+
+/* ---------- 실패 ---------- */
+function showFail(){
+  el.failEgg.innerHTML = '<svg viewBox="0 0 200 240" aria-hidden="true" style="width:100%;height:auto">' + eggMarkup(false) + '</svg>';
+  var ft = document.getElementById('failTarget');
+  if (ft) ft.textContent = normHM(S.settings.target) || '08:45';
+  el.failOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeFail(){
+  el.failOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+/* ---------- 전체 완료 ---------- */
+function onAllDone(){
+  if (S.today.hatched || S.today.failed) return;
+  var onTime = new Date().getTime() <= targetDate().getTime();
+  S.today.completeAt = Date.now();
+  S.today.onTime = onTime;
+  save();
+  if (S.settings.mode === 'strict' && !onTime){
+    S.today.failed = true;
+    save();
+    sfx.fail();
+    updateFoot(doneCount(), S.settings.routine.length);
+    setTimeout(showFail, 420);
+    return;
+  }
+  sfx.complete();
+  setTimeout(function(){ openHatch(onTime, false); }, 800);
+}
+
+/* ---------- 설정 ---------- */
+function renderSettings(){
+  $$('#modeSeg button').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-mode') === S.settings.mode);
+  });
+  el.modeHelp.innerHTML = S.settings.mode === 'strict'
+    ? '08:45가 지나면 오늘은 <b>부화 실패</b>! 알은 내일 다시 도전해요.'
+    : '08:45 전에 모두 끝내면 <b>황금알</b>이 와요. 희귀·전설 확률이 확 올라가요! 늦어도 일반 알은 부화해요.';
+  el.targetInput.value = normHM(S.settings.target) || '08:45';
+  el.routineBadge.textContent = S.settings.routine.length + '개';
+  var box = el.routineEdit;
+  box.innerHTML = '';
+  S.settings.routine.forEach(function(item, idx){
+    var row = document.createElement('div');
+    row.className = 'r-edit-row';
+    row.innerHTML =
+      '<input class="time-input" type="text" maxlength="7" placeholder="--:--" value="' + esc(item.time) + '" aria-label="' + (idx + 1) + '번째 미션 시간">' +
+      '<input class="text-input" type="text" maxlength="40" placeholder="미션 이름" value="' + esc(item.label) + '" aria-label="' + (idx + 1) + '번째 미션 이름">' +
+      '<button class="del" type="button" aria-label="이 미션 삭제">✕</button>';
+    var tIn = row.querySelector('.time-input');
+    var nIn = row.querySelector('.text-input');
+    var timer = null;
+    function changed(){
+      item.time = tIn.value;
+      item.label = nIn.value;
+      save();
+      clearTimeout(timer);
+      timer = setTimeout(function(){ renderRoutine(); updateClockAll(); }, 250);
+    }
+    tIn.addEventListener('input', changed);
+    nIn.addEventListener('input', changed);
+    row.querySelector('.del').addEventListener('click', function(){
+      if (S.settings.routine.length <= 1){ toast('미션은 하나 이상 있어야 해요'); return; }
+      S.settings.routine.splice(idx, 1);
+      save();
+      renderSettings();
+      renderRoutine();
+      updateClockAll();
+    });
+    box.appendChild(row);
+  });
+  el.dexCode.value = lastDexCode;
+  el.dexCode.placeholder = '내보내기를 누르면 코드가 나와요. 다른 기기에서는 코드를 붙여넣고 불러오기를 누르세요.';
+}
+
+function openSettings(){
+  renderSettings();
+  el.settingsOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeSettings(){
+  el.settingsOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+/* ---------- 내보내기/불러오기 ---------- */
+function b64encode(str){
+  var bytes = new TextEncoder().encode(str);
+  var bin = '';
+  for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+function b64decode(str){
+  var bin = atob(str.replace(/\s+/g, ''));
+  var bytes = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+var lastDexCode = '';
+function exportDex(){
+  var payload = { app:'jinwoo-dino-dash', v:1, at: todayKey(), dex: S.dex };
+  var code;
+  try { code = b64encode(JSON.stringify(payload)); }
+  catch (e) { toast('내보내기에 실패했어요'); return; }
+  lastDexCode = code;
+  el.dexCode.value = code;
+  el.dexCode.focus();
+  el.dexCode.select();
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(code).then(function(){
+        toast('도감 코드를 복사했어요! 다른 기기에 붙여넣으세요');
+      }, function(){});
+    } else {
+      try { document.execCommand('copy'); } catch (e) {}
+    }
+  } catch (e) {}
+  toast('도감 코드가 만들어졌어요. 복사해서 다른 기기에 붙여넣으세요');
+}
+
+function importDex(){
+  var raw = (el.dexCode.value || '').trim();
+  if (!raw){ toast('먼저 코드를 붙여넣어 주세요'); return; }
+  var obj = null;
+  try {
+    var json = raw.charAt(0) === '{' ? raw : b64decode(raw);
+    obj = JSON.parse(json);
+  } catch (e) { toast('코드를 읽을 수 없어요. 다시 확인해 주세요'); return; }
+  var src = obj && (obj.dex || obj) ;
+  if (!src || typeof src !== 'object'){ toast('도감 코드가 아니에요'); return; }
+  var merged = 0;
+  Object.keys(src).forEach(function(k){
+    if (!DINO_BY_ID[k]) return;
+    var e = src[k];
+    var count = 1, first = todayKey();
+    if (e && typeof e === 'object'){
+      count = Math.max(1, parseInt(e.count, 10) || 1);
+      first = /^\d{4}-\d{2}-\d{2}$/.test(e.first || '') ? e.first : first;
+    }
+    var cur = S.dex[k];
+    if (!cur){ S.dex[k] = { count: count, first: first }; merged++; }
+    else {
+      cur.count = Math.max(cur.count, count);
+      if (first < cur.first) cur.first = first;
+      merged++;
+    }
+  });
+  save();
+  renderDex();
+  if (merged) toast('도감 ' + merged + '종을 불러왔어요!');
+  else toast('새로 불러올 공룡이 없어요');
+}
+
+/* ---------- 토스트 / 확인 ---------- */
+var toastTimer = null;
+function toast(msg){
+  el.toast.textContent = msg;
+  el.toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.toast.classList.remove('show'); }, 2600);
+}
+var confirmCb = null;
+function askConfirm(title, msg, cb){
+  el.confirmTitle.textContent = title;
+  el.confirmMsg.innerHTML = msg;
+  confirmCb = cb;
+  el.confirmOverlay.classList.add('show');
+}
+function closeConfirm(){ el.confirmOverlay.classList.remove('show'); confirmCb = null; }
+
+/* ---------- 꽃가루 ---------- */
+var confettiParts = [], confettiRaf = null, confettiStart = 0;
+function confettiBurst(rarity){
+  var cvs = el.confetti;
+  if (!cvs || !cvs.getContext) return;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var w = window.innerWidth, h = window.innerHeight;
+  cvs.width = Math.floor(w * dpr);
+  cvs.height = Math.floor(h * dpr);
+  var ctx = cvs.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+  var colors = ['#33d29c','#ffb43a','#ff7d6b','#5ab6ff','#8f7bf5','#f7c948','#ffffff','#7ee0e0'];
+  if (rarity === 'legend') colors = ['#f7c948','#ffe9a3','#ffffff','#ffb43a','#ffd76a','#ff8fb8'];
+  var n = 170;
+  confettiParts = [];
+  for (var i = 0; i < n; i++){
+    var ang = Math.random() * Math.PI * 2;
+    var speed = 4 + Math.random() * 11;
+    confettiParts.push({
+      x: w / 2 + (Math.random() - 0.5) * 90,
+      y: h * 0.42 + (Math.random() - 0.5) * 70,
+      vx: Math.cos(ang) * speed,
+      vy: Math.sin(ang) * speed - 6,
+      w: 5 + Math.random() * 7,
+      h: 8 + Math.random() * 9,
+      rot: Math.random() * Math.PI,
+      vr: (Math.random() - 0.5) * 0.34,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    });
+  }
+  confettiStart = performance.now();
+  if (confettiRaf) cancelAnimationFrame(confettiRaf);
+  var last = confettiStart;
+  function frame(t){
+    var dt = Math.min(48, t - last) / 16.67;
+    last = t;
+    ctx.clearRect(0, 0, w, h);
+    var alive = 0;
+    for (var i = 0; i < confettiParts.length; i++){
+      var p = confettiParts[i];
+      if (p.dead) continue;
+      p.vy += 0.34 * dt;
+      p.vx *= 0.992;
+      p.x += p.vx * dt;
+      p.y += p.vy * dt;
+      p.rot += p.vr * dt;
+      if (p.y > h + 40 || p.x < -60 || p.x > w + 60) { p.dead = true; continue; }
+      alive++;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = Math.max(0, 1 - Math.max(0, (t - confettiStart - 1500)) / 1500);
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * (0.5 + 0.5 * Math.abs(Math.cos(p.rot))));
+      ctx.restore();
+    }
+    if (alive > 0 && t - confettiStart < 3200){
+      confettiRaf = requestAnimationFrame(frame);
+    } else {
+      ctx.clearRect(0, 0, w, h);
+      confettiRaf = null;
+    }
+  }
+  confettiRaf = requestAnimationFrame(frame);
+}
+
+/* ---------- 화면 전환 ---------- */
+function showView(name){
+  $$('.view').forEach(function(v){ v.classList.toggle('active', v.id === 'view-' + name); });
+  $$('.tab').forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-view') === name); t.setAttribute('aria-selected', t.getAttribute('data-view') === name ? 'true' : 'false'); });
+  if (name === 'dex') renderDex();
+  window.scrollTo(0, 0);
+  sfx.tap();
+}
+
+/* ---------- 시계 갱신 전체 ---------- */
+function updateClockAll(){
+  renderClock();
+  updateRoutine();
+}
+
+/* ---------- 이벤트 ---------- */
+function bind(){
+  el.soundBtn.addEventListener('click', function(){
+    S.settings.muted = !S.settings.muted;
+    save();
+    paintSound();
+    if (!S.settings.muted) sfx.tap();
+    toast(S.settings.muted ? '소리를 껐어요' : '소리를 켰어요');
+  });
+  el.settingsBtn.addEventListener('click', function(){ sfx.tap(); openSettings(); });
+  el.settingsClose.addEventListener('click', closeSettings);
+  el.settingsOverlay.addEventListener('click', function(e){ if (e.target === el.settingsOverlay) closeSettings(); });
+
+  el.tabMission.addEventListener('click', function(){ showView('mission'); });
+  el.tabDex.addEventListener('click', function(){ showView('dex'); });
+
+  $$('#modeSeg button').forEach(function(b){
+    b.addEventListener('click', function(){
+      S.settings.mode = b.getAttribute('data-mode');
+      save();
+      renderSettings();
+      updateFoot(doneCount(), S.settings.routine.length);
+      sfx.tap();
+    });
+  });
+  el.targetInput.addEventListener('change', function(){
+    var v = normHM(el.targetInput.value);
+    if (v){ S.settings.target = v; }
+    el.targetInput.value = normHM(S.settings.target) || '08:45';
+    save();
+    renderClock();
+    updateFoot(doneCount(), S.settings.routine.length);
+  });
+
+  el.addRoutineBtn.addEventListener('click', function(){
+    if (S.settings.routine.length >= 12){ toast('미션은 12개까지만 만들 수 있어요'); return; }
+    var id = 'r' + Date.now();
+    S.settings.routine.push({ id:id, time:'', label:'새 미션', icon:'⭐' });
+    save();
+    renderSettings();
+    renderRoutine();
+    updateClockAll();
+    toast('새 미션을 추가했어요. 이름을 고쳐 주세요');
+  });
+
+  el.resetTodayBtn.addEventListener('click', function(){
+    askConfirm('오늘 체크를 초기화할까요?', '체크한 미션과 오늘 부화한 알이 모두 사라져요.<br>도감에 모은 공룡은 그대로 남아요.', function(){
+      S.today = freshToday();
+      save();
+      renderRoutine();
+      renderDex();
+      updateClockAll();
+      toast('오늘 체크를 초기화했어요');
+    });
+  });
+
+  el.previewBtn.addEventListener('click', function(){
+    closeSettings();
+    setTimeout(function(){ openHatch(true, true); }, 180);
+  });
+
+  el.exportBtn.addEventListener('click', exportDex);
+  el.importBtn.addEventListener('click', importDex);
+
+  el.eggBtn.addEventListener('click', tapEgg);
+  el.hatchClose.addEventListener('click', function(){
+    closeHatch();
+    if (!hatch.test) showView('mission');
+  });
+  el.rcClose.addEventListener('click', function(){ closeHatch(); if (!hatch.test) showView('mission'); });
+  el.rcDexBtn.addEventListener('click', function(){ closeHatch(); showView('dex'); });
+  el.hatchOverlay.addEventListener('click', function(e){
+    if (e.target === el.hatchOverlay && el.hatchStage.classList.contains('revealed')) closeHatch();
+  });
+
+  el.failClose.addEventListener('click', function(){ closeFail(); });
+  el.failSettings.addEventListener('click', function(){ closeFail(); setTimeout(openSettings, 200); });
+  el.failOverlay.addEventListener('click', function(e){ if (e.target === el.failOverlay) closeFail(); });
+
+  el.confirmNo.addEventListener('click', closeConfirm);
+  el.confirmYes.addEventListener('click', function(){ var cb = confirmCb; closeConfirm(); if (cb) cb(); });
+  el.confirmOverlay.addEventListener('click', function(e){ if (e.target === el.confirmOverlay) closeConfirm(); });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    if (el.confirmOverlay.classList.contains('show')) return closeConfirm();
+    if (el.settingsOverlay.classList.contains('show')) return closeSettings();
+    if (el.hatchOverlay.classList.contains('show')) return closeHatch();
+    if (el.failOverlay.classList.contains('show')) return closeFail();
+  });
+
+  /* 제목 길게 누르면 부모님 설정 */
+  var lpTimer = null;
+  function lpStart(){
+    clearTimeout(lpTimer);
+    lpTimer = setTimeout(function(){ openSettings(); }, 800);
+  }
+  function lpEnd(){ clearTimeout(lpTimer); }
+  el.brandBtn.addEventListener('pointerdown', lpStart);
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){ el.brandBtn.addEventListener(ev, lpEnd); });
+  el.brandBtn.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+  /* 첫 터치에 오디오 깨우기 */
+  ['pointerdown','touchstart'].forEach(function(ev){
+    document.addEventListener(ev, function once(){ try { audioCtx(); } catch (e) {} }, { once:true, passive:true });
+  });
+
+  window.addEventListener('resize', function(){
+    if (confettiRaf) { /* 다음 프레임에 자동 처리 */ }
+  });
+}
+
+/* ---------- 시작 ---------- */
+function paintSound(){
+  el.soundBtn.textContent = S.settings.muted ? '🔇' : '🔊';
+  el.soundBtn.classList.toggle('is-off', !!S.settings.muted);
+  el.soundBtn.setAttribute('aria-label', S.settings.muted ? '소리 켜기' : '소리 끄기');
+}
+
+function init(){
+  cacheEls();
+  paintSound();
+  renderRoutine();
+  renderDex();
+  renderClock();
+  renderSettings();
+  bind();
+  setInterval(function(){
+    checkDayChange();
+    renderClock();
+  }, 1000);
+  setInterval(function(){ updateRoutine(); }, 30000);
+  document.addEventListener('visibilitychange', function(){
+    if (!document.hidden){ checkDayChange(); renderClock(); }
+  });
+  if (S.today.hatched) updateFoot(doneCount(), S.settings.routine.length);
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
+
+})();
+
+</script>
+</body>
+</html>
